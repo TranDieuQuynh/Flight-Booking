@@ -1,0 +1,143 @@
+
+  /* Phần header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  header .logo-container img {
+    height: 100px;
+  }
+  
+  header .header-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  header .help-btn {
+    color: rgb(122, 119, 119);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header .language-select {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  /* Phần body */
+  #register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+  }
+  
+  .register-background {
+    background-image: url("/img/background_login.webp"); /* Đường dẫn ảnh */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .register-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    color: #020268;
+    font-weight: bold;
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .register-container .logo-small {
+    width: 100px;
+    margin: 0 auto 20px; /* Căn giữa logo và tạo khoảng cách dưới */
+    display: block; /* Đảm bảo logo là block element để dễ căn giữa */
+    text-align: center; /* Nếu cần căn giữa thêm */
+}
+  
+  .register-container .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .register-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .register-container .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .register-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004a99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .register-container button:hover {
+    background-color: #0066cc;
+  }
+  
+  .register-container p {
+    text-align: center;
+  }
+  
+  .register-container a {
+    color: #004a99;
+    text-decoration: none;
+  }
+  
+  .register-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Phần footer */
+  footer {
+    background-color: #004a99;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  footer .footer-social {
+    margin-top: 10px;
+  }
+  
+  footer .footer-social .social-icon {
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+  }
+  
+  footer .footer-social .social-icon:hover {
+    color: #ffd700;
+  }
+  
