@@ -1,55 +1,51 @@
 User
-- user_id (PK)
-- username
-- password
-- email
-- phone_number
-- role
-- created_at
+- user_id (PK) (uuid)
+- username (string)
+- password (string)
+- email (string)
+- phone_number (string)
+- role (string)
+- created_at (date)
+- bookings (Booking)
 
 Flight
-- flight_id (PK)
-- aircraft_id (FK)
-- departure_city
-- arrival_city
-- departure_time
-- arrival_time 
-- base_price
-- status
+- flight_id (PK) (uuid)
+- aircraft_id (FK) (Aircraft)
+- departure_city (string)
+- arrival_city (string)
+- departure_time (Date)
+- arrival_time (Date)
+- base_price (number)
+- status (string)
 
 TicketClass
-- ticket_class_id (PK) 
-- class_name
-- multiplier
-
-FlightDetail
-- flight_detail_id (PK)
-- seat (FK)
-- flight (FK) 
+- ticket_class_id (PK) (string)
+- class_name (string)
+- multiplier (number)
 
 Booking
-- booking_id (PK)
-- user_id (FK)
-- created_at
-- status
-- can_cancel_until
-- cancellation_date
+- booking_id (PK) (uuid)
+- user_id (FK) (User)
+- created_at (Date)
+- status (string)
+- can_cancel_until (Date)
+- cancellation_date (Date)
 
 BookingDetail
-- booking_detail_id (PK) 
-- booking_id (FK)
-- flight_detail_id (FK)
-- passenger_name
-- passenger_age
-- seat_number
+- booking_detail_id (PK) (string)
+- booking_id (FK) (Booking)
+- flight_id (FK) (Flight)
+- passenger_name (string)
+- passenger_age (number)
+- ticket_class (FK) (TicketClass)
 
 Promotion
-- promotion_id (PK)
-- title
-- description
-- discount_percentage
-- start_date
-- end_date
+- promotion_id (PK) (string)
+- title (string)
+- description (string)
+- discount_percentage (number)
+- start_date (Date)
+- end_date (Date)
 
 CustomerSupport
 - support_id (PK)
@@ -58,23 +54,22 @@ CustomerSupport
 - contact_method
 
 Aircraft
-- aircraft_id (PK)
-- model
-- manufacturer
-- seat_capacity
+- aircraft_id (PK) (uuid)
+- model (string)
+- manufacturer (string)
+- seat_capacity (number)
 
-Seat 
-- seat_id (PK)
-- aircraft_id (FK)
-- seat_class_id (FK)
-- seat_number 
+SeatCount
+- flight (Flight)
+- ticket_class (TicketClass)
+- seat_count (number)
 
 Announcement
-- announcement_id (FK)
-- title
-- content
-- created_at
-- type
+- announcement_id (FK) (uuid)
+- title (string)
+- content (string)
+- created_at (Date)
+- type (string)
 
 User - Booking: Một người dùng có thể đặt nhiều vé.
 Flight - FlightDetail: Mỗi chuyến bay có nhiều loại vé.

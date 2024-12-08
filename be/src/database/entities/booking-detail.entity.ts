@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, ManyToOne, Column } from 'typeorm';
 import { Booking } from './booking.entity';
-import { FlightDetail } from './flight-detail.entity';
+import { TicketClass } from "./ticket-class.entity";
+import { Flight } from './flight.entity';
 
 @Entity()
 export class BookingDetail {
@@ -10,8 +11,8 @@ export class BookingDetail {
   @ManyToOne(() => Booking)
   booking: Booking;
 
-  @ManyToOne(() => FlightDetail)
-  flight_detail: FlightDetail;
+  @ManyToOne(() => Flight)
+  flight_detail: Flight;
 
   @Column()
   passenger_name: string;
@@ -19,6 +20,6 @@ export class BookingDetail {
   @Column('int')
   passenger_age: number;
 
-  @Column()
-  seat_number: string;
+  @ManyToOne(() => TicketClass)
+  ticket_class: TicketClass;
 }

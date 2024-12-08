@@ -17,10 +17,4 @@ export class UserController {
   async getUserById(@Param('id') id: string): Promise<User | null> {
     return this.userService.getUserById(id);
   }
-
-  // Add a new user
-  @Post()
-  async addUser(@Body() userData: Partial<User>): Promise<User> {
-    return this.userService.addUser(userData);
-  }
 }
