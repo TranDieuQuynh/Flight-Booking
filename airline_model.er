@@ -1,0 +1,87 @@
+User
+- user_id (PK)
+- username
+- password
+- email
+- phone_number
+- role
+- created_at
+
+Flight
+- flight_id (PK)
+- aircraft_id (FK)
+- departure_city
+- arrival_city
+- departure_time
+- arrival_time 
+- base_price
+- status
+
+TicketClass
+- ticket_class_id (PK) 
+- class_name
+- multiplier
+
+FlightDetail
+- flight_detail_id (PK)
+- seat (FK)
+- flight (FK) 
+
+Booking
+- booking_id (PK)
+- user_id (FK)
+- created_at
+- status
+- can_cancel_until
+- cancellation_date
+
+BookingDetail
+- booking_detail_id (PK) 
+- booking_id (FK)
+- flight_detail_id (FK)
+- passenger_name
+- passenger_age
+- seat_number
+
+Promotion
+- promotion_id (PK)
+- title
+- description
+- discount_percentage
+- start_date
+- end_date
+
+CustomerSupport
+- support_id (PK)
+- question
+- answer
+- contact_method
+
+Aircraft
+- aircraft_id (PK)
+- model
+- manufacturer
+- seat_capacity
+
+Seat 
+- seat_id (PK)
+- aircraft_id (FK)
+- seat_class_id (FK)
+- seat_number 
+
+Announcement
+- announcement_id (FK)
+- title
+- content
+- created_at
+- type
+
+User - Booking: Một người dùng có thể đặt nhiều vé.
+Flight - FlightDetail: Mỗi chuyến bay có nhiều loại vé.
+Booking - BookingDetail: Một đơn đặt vé bao gồm nhiều vé cụ thể.
+FlightDetail - TicketClass: Liên kết hạng vé với chi tiết chuyến bay.
+Promotion: Có thể áp dụng cho các chuyến bay hoặc người dùng trong thời gian nhất định.
+Aircraft - Flight: Một tàu bay có thể thực hiện nhiều chuyến bay.
+Seat - Aircraft: Một tàu bay chứa nhiều ghế, mỗi ghế thuộc một hạng.
+Announcement - Admin: Chỉ quản trị viên mới có quyền tạo hoặc sửa thông báo.
+Flight - Booking: Thêm ràng buộc về thời gian hủy vé (can_cancel_until).
