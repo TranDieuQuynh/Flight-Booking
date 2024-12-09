@@ -1,143 +1,594 @@
+body {
+  font-family: sans-serif;
+}
 
-  /* Phần header */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: white;
+/* Reset cơ bản */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header với hiệu ứng gradient chuyển động */
+header {
+position: relative;
+padding: 20px;
+text-align: center;
+background: linear-gradient(to top left, #9966ff 0%, #ccffff 100%);
+background-size: 400% 400%; /* Kích thước nền gradient để có không gian thay đổi */
+animation: gradientAnimation 4s ease infinite; /* Áp dụng hiệu ứng gradient */
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation cho hiệu ứng gradient chuyển động */
+@keyframes gradientAnimation {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between; /* Căn đều các phần tử bên trong */
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+transition: transform 0.3s ease-in-out; /* Hiệu ứng khi logo thay đổi */
+}
+
+header .menu {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0 auto;
+  justify-content: center;
+  flex-grow: 1;
+  padding-left: 0;
+}
+
+header .menu li {
+  display: inline;
+}
+
+
+
+
+header .menu a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 15px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng cho chữ */
+}
+
+.gradient-text a {
+background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
+-webkit-background-clip: text; /* Chỉ áp dụng gradient cho chữ */
+color: transparent; /* Làm cho màu chữ gốc không hiển thị */
+}
+
+.gradient-text {
+background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
+-webkit-background-clip: text; /* Chỉ áp dụng gradient cho chữ */
+color: transparent; /* Làm cho màu chữ gốc không hiển thị */
+}
+
+
+/* Hiệu ứng hover cho liên kết */
+.menu a:hover {
+color: #260592; /* Thay đổi màu chữ khi hover */
+transform: translateY(-5px); /* Di chuyển lên một chút khi hover */
+}
+
+.menu a::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 2px;
+background-color: #0066ff;
+transform: scaleX(0);
+transition: transform 0.3s ease;
+}
+
+/* Thêm hiệu ứng cho đường gạch dưới */
+.menu a:hover::after {
+transform: scaleX(1); /* Hiển thị đường gạch dưới khi hover */
+}
+
+/* Hiệu ứng hover cho logo */
+.logo:hover {
+transform: scale(1.1); /* Phóng to logo khi hover */
+}
+
+/* Các biểu tượng bổ sung */
+.additional-icons {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+}
+
+/* Trợ giúp và ngôn ngữ */
+.top-row {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.help-btn {
+background-color: transparent;
+border: none;
+color: rgb(111, 10, 188);
+font-size: 14px;
+cursor: pointer;
+}
+
+.help-btn i {
+margin-right: 5px;
+}
+
+.language-selector select {
+background-color: transparent;
+color: rgb(111, 10, 188);
+border: 1px solid rgb(21, 0, 98);
+padding: 5px 10px;
+font-size: 14px;
+}
+
+/* Liên kết Đăng ký | Đăng nhập */
+.auth-links a {
+text-decoration: none;
+font-size: 14px;
+}
+
+
+/* Hiệu ứng hover cho các phần tử */
+.language-selector select:hover,
+.help-btn:hover,
+.auth-links a:hover {
+background-color: #f49e00;  /* Màu vàng nhạt khi hover */
+}
+
+
+/* Navigation Bar */
+.navbar {
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Căn giữa logo và menu */
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  height: 20px;
+  width: auto;
+  margin-right: 20px;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .navbar .logo {
+      height: 40px;
   }
-  
-  header .logo-container img {
-    height: 100px;
+}
+
+@media (max-width: 768px) {
+  .navbar .logo {
+    height: 25px; /* Logo nhỏ hơn trên các màn hình di động */
   }
-  
-  header .header-right {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .navbar .logo {
+    height: 40px; /* Logo to hơn trên các màn hình lớn */
   }
-  
-  header .help-btn {
-    color: rgb(122, 119, 119);
-    text-decoration: none;
-    font-weight: bold;
+}
+
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .menu li {
+  display: inline;
+}
+
+.navbar .menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .menu a:hover {
+  background-color: #ffd700; /* Màu nền khi hover */
+  color: black; /* Màu chữ khi hover */
+}
+
+.navbar .login-btn {
+  background-color: #ffd700; /* Màu nền của nút đăng nhập */
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .login-btn:hover {
+  background-color: #003d7a; /* Màu nền khi hover */
+  color: white; /* Màu chữ khi hover */
+}
+
+/* Responsive: Chuyển thành menu dạng cột trên thiết bị nhỏ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  header .language-select {
-    padding: 5px;
-    font-size: 14px;
+
+  .navbar .menu {
+    flex-direction: column;
+    gap: 15px;
   }
+
+  .navbar .menu a {
+    font-size: 1.2rem;
+  }
+}
   
   /* Phần body */
-  #register-section {
+  #login-section {
+    position: relative;
+    background-size: 200% 200%; /* Kích thước lớn hơn của gradient */
+    animation: radialAnimation 3s ease-in-out infinite; /* Áp dụng hiệu ứng chuyển động */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* Phần hiển thị máy bay */
+.airplane-animation {
+  position: absolute;
+  left: 100%; /* Máy bay bắt đầu ở bên phải */
+  transform: translateY(-50%); /* Đảm bảo máy bay nằm giữa theo chiều dọc */
+  z-index: 1;
+  animation: flyFromRight 10s linear infinite; /* Tạo hiệu ứng máy bay bay từ phải sang trái */
+}
+
+/* Cài đặt máy bay */
+.airplane-animation .airplane {
+  width: 500px;
+  height: auto;
+}
+
+/* Tạo hiệu ứng máy bay bay từ phải sang trái */
+@keyframes flyFromRight {
+  0% {
+    left: 100%; /* Máy bay bắt đầu ở bên phải */
   }
-  
-  .register-background {
-    background-image: url("/img/background_login.webp"); /* Đường dẫn ảnh */
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  100% {
+    left: -120px; /* Máy bay kết thúc ở bên trái */
   }
+}
+
+/* Định dạng cho form */
+#login-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: url('/img/nen_form.png') no-repeat center center/cover; /* Thêm hình ảnh nền */
+}
+
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(203 186 255 / 80%);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  z-index: 2;
+
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-header h2 {
+  font-size: 24px;
+  color: #4a00a2
+}
+
+/* Logo form */
+.form-logo {
+  max-width: 120px;
+  margin-bottom: 20px;
+}
+
+/* Các trường input */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9; /* Màu nền sáng cho input */
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi người dùng hover vào input */
+.form-group input:focus {
+  border-color: #ff66cc; /* Màu tím sáng khi focus */
+  background-color: #fff;
+}
+
+/* Nút đăng ký */
+.form-group button {
+  width: 100%;
+  padding: 12px;
+  background: #ff66cc; /* Màu nền nút */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-group button:hover {
+  background: #ff3399; /* Màu khi hover */
+}
+
+/* Liên kết "Đã có tài khoản?" */
+.form-group p {
+  color: #4A0080;
+  font-size: 14px;
+}
+
+.form-group a {
+  color: #ff66cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-group a:hover {
+  text-decoration: underline;
+  color: #ff3399; /* Màu khi hover */
+}
+
   
-  .register-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 2;
-    color: #020268;
-    font-weight: bold;
-  }
-  
-  .register-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .register-container .logo-small {
-    width: 100px;
-    margin: 0 auto 20px; /* Căn giữa logo và tạo khoảng cách dưới */
-    display: block; /* Đảm bảo logo là block element để dễ căn giữa */
-    text-align: center; /* Nếu cần căn giữa thêm */
+  footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột */
+    gap: 30px; /* Khoảng cách giữa các cột */
+    padding: 20px;
+    background:  linear-gradient(to top right, #ffffff 0%, #ccffff 100%) !important;
 }
   
-  .register-container .form-group {
-    margin-bottom: 15px;
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+  
+.footer-column h3  {
+    font-size: 16px;
+    margin-bottom: 10px;
+    background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
   }
   
-  .register-container .form-group label {
-    display: block;
-    margin-bottom: 5px;
+  .footer-column p {
     font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .social-icons a, .app-icons a, .payment-icons a {
+    display: inline-block;
+    margin-right: 15px;
   }
   
-  .register-container .form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  .social-icons i, .payment-icons i {
+    font-size: 30px;  
   }
   
-  .register-container button {
-    width: 100%;
-    padding: 12px;
-    background-color: #004a99;
+
+  .app-icons {
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .app-icons a {
+    display: inline-block;
+    margin-right: 10px; 
+  }
+  
+  .app-icons img {
+    width: 100px;  
+    height: auto;  
+    vertical-align: middle; 
+  }
+  
+  
+  .footer-column .payment-icons i {
+    font-size: 30px;  
+  }
+  
+
+/* Responsive Design for small screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-logo,
+    .footer-links,
+    .footer-social {
+        text-align: center;
+    }
+}
+
+/* Nút Chat */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .chat-btn {
+    background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 80px;
+    font-size: 14px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+  .chat-icon  {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    position: absolute;
+    left: -80px;
+    top: -10px;
+    transform: translateY(-50%);
   }
   
-  .register-container button:hover {
-    background-color: #0066cc;
+  /* Cửa sổ Chat */
+.chatbox {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
   }
   
-  .register-container p {
-    text-align: center;
-  }
-  
-  .register-container a {
-    color: #004a99;
-    text-decoration: none;
-  }
-  
-  .register-container a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Phần footer */
-  footer {
-    background-color: #004a99;
+  /* Header của chatbox */
+  .chatbox-header {
+    background: linear-gradient(to right, #6600ff 0%, #cc00cc 100%);
+    color: white;
     padding: 20px;
-    color: white;
     text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
   
-  footer .footer-social {
-    margin-top: 10px;
+  .chatbox-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
   }
   
-  footer .footer-social .social-icon {
-    margin: 0 10px;
-    color: white;
+  .header-text h2 {
+    color: #8cccff;
     font-size: 20px;
+    font-weight: bolder;
+    margin:  0 0 20px 0;
   }
   
-  footer .footer-social .social-icon:hover {
-    color: #ffd700;
+  .header-text p {
+    font-size: 14px;
+    color: #f0f0f0;
+    font-style: italic;
+    margin: 0;
   }
   
+  /* Phần thân của chatbox */
+  .chatbox-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .messages {
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chatbox-body input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .send-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #6600ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .send-btn:hover {
+    background-color: #cc00cc;
+  }
+  
+  /* Hiệu ứng khi chatbox mở ra */
+  .chatbox.show {
+    display: block;
+  }

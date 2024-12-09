@@ -14,151 +14,147 @@
 
 <body>
 
-    <!-- Header Section -->
     <header>
         <nav>
-          <img src="img/logo.png" alt="QAirline Logo" class="logo" style="height: 120px;">
+          <img src="img/logo_tachnen.png" alt="QAirline Logo" class="logo" style="height: 120px;">
           
           
-          <ul class="menu">
-            <li><a href="#home">Trang chủ</a></li>
-            <li><a href="#booking">Đặt vé</a></li>
-            <li><a href="#services">Dịch vụ</a></li>
-            <li><a href="#contact">Thông tin hành trình</a></li>
-            <li><a href="#about">Liên hệ</a></li>
+          <ul class="menu gradient-text">
+            <li><a href="#home">TRANG CHỦ</a></li>
+            <li><a href="#booking">ĐẶT VÉ</a></li>
+            <li><a href="#services">DỊCH VỤ</a></li>
+            <li><a href="#contact">THÔNG TIN HÀNH TRÌNH</a></li>
+            <li><a href="#about">LIÊN HỆ</a></li>
           </ul>
     
-        <!-- Các biểu tượng bổ sung -->
-        <div class="additional-icons">
-            <!-- Hàng đầu tiên: Trợ giúp và ngôn ngữ -->
-            <div class="top-row">
-              <button class="help-btn-text">
-                <i class="fa fa-search"></i> TRỢ GIÚP
-              </button>
-              <div class="language-selector">
-                <select>
-                  <option value="vi">Tiếng Việt</option>
-                  <option value="en">English</option>
-                  <option value="cn">中文</option>
-                </select>
-              </div>
-            </div>
-      
+         <!-- Các biểu tượng bổ sung -->
+         <div class="additional-icons">
+          <!-- Hàng đầu tiên: Trợ giúp và ngôn ngữ -->
+          <div class="top-row">
+            <button class="help-btn">
+              <i class="fa fa-search"></i> TRỢ GIÚP
+            </button>
     
-          <div class="auth-btns">
-            <button class="login-btn">Đăng nhập</button>
-            <button class="register-btn">Đăng ký</button>
+            <div class="language-selector">
+              <select>
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English</option>
+                <option value="cn">中文</option>
+              </select>
+            </div>
+          </div>
+    
+            <!-- Liên kết Đăng ký | Đăng nhập -->
+            <div class="auth-links" style="color: rgb(111, 10, 188);font-weight: bold;padding: 5px 5px 5px 25px;">
+              <a href="#" class="login-link">Đăng nhập</a> | <a href="#" class="register-link">Đăng ký</a>
+            </div>
           </div>
     
         </nav>
-      </header>  
+      </header>
 
-<!-- Phần Banner -->
-<div class="banner-container">
-    <div class="banner">
-        <img src="/img/banner-booking.jpg" alt="Banner" class="banner-img">
-    </div>
-    <!-- Ô điều hướng phía dưới banner -->
-    <div class="navigation-box">
-        <a href="#home" class="navigation-link"><i class="fa fa-home"></i> Trang chủ</a>
-    </div>
-</div>
+
+        <!-- Phần Banner -->
+            <div class="banner-container">
+                <div class="banner">
+                    <img src="/img/banner_booking.png" alt="Banner" class="banner-img">
+                </div>
+            </div>
 
 
        <!-- Phần Đặt Vé -->
        <section id="booking-section" style="color: #170290;">
-        <div class="booking-container">
-            <!-- Thông tin đặt vé -->
-            <div class="booking-info">
-                <h2>Thông tin đặt vé</h2>
-                <img src="img/flight-booking.png" alt="Thông tin chuyến bay" class="info-img"> <!-- Thêm hình ảnh -->
-                <form id="booking-form">
-                    <div class="form-group">
-                        <label for="departure">Điểm khởi hành:</label>
-                        <input type="text" id="departure" placeholder="Hà Nội" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="destination">Điểm đến:</label>
-                        <input type="text" id="destination" placeholder="TP. Hồ Chí Minh" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="departure-date">Ngày đi:</label>
-                        <input type="date" id="departure-date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="return-date">Ngày về:</label>
-                        <input type="date" id="return-date">
-                    </div>
-                    <div class="form-group">
-                        <label for="passengers">Số lượng hành khách:</label>
-                        <input type="number" id="passengers" value="1" min="1" max="10" required>
-                    </div>
-                    <button type="submit" class="btn">Tìm chuyến bay</button>
-                </form>
+            <div class="booking-container">
+                <!-- Thông tin đặt vé -->
+                <div class="booking-info">
+                    <h2>Thông tin đặt vé</h2>
+                    <img src="img/flight-booking.png" alt="Thông tin chuyến bay" class="info-img"> <!-- Thêm hình ảnh -->
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="departure">Điểm khởi hành:</label>
+                            <input type="text" id="departure" placeholder="Hà Nội" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Điểm đến:</label>
+                            <input type="text" id="destination" placeholder="TP. Hồ Chí Minh" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="departure-date">Ngày đi:</label>
+                            <input type="date" id="departure-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="return-date">Ngày về:</label>
+                            <input type="date" id="return-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Số lượng hành khách:</label>
+                            <input type="number" id="passengers" value="1" min="1" max="10" required>
+                        </div>
+
+                        <button type="submit" class="btn">Tìm chuyến bay</button>
+                    </form>
             </div>
 
             <!-- Dịch vụ bổ trợ -->
-            <!-- Dịch vụ bổ trợ -->
-<div class="extra-services">
-    <h2>Dịch vụ bổ trợ</h2>
-    <img src="img/travel_insurance.avif" alt="Dịch vụ bổ trợ" class="service-img" style="color: #170290;"> <!-- Thêm hình ảnh -->
+            <div class="extra-services">
+                 <h2>Dịch vụ bổ trợ</h2>
+                <img src="img/travel_insurance.avif" alt="Dịch vụ bổ trợ" class="service-img" style="color: #170290;"> <!-- Thêm hình ảnh -->
+   
+                <!-- Hành lý bổ sung -->
+                <div class="service-item">
+                    <input type="checkbox" id="meal" name="meal">
+                    <label for="meal">Chọn bữa ăn đặc biệt</label>
+                    <p class="service-description">
+                    Chọn một bữa ăn phù hợp với khẩu vị hoặc yêu cầu ăn kiêng của bạn. Các tùy chọn có thể bao gồm ăn chay, ăn kiêng gluten, hoặc các bữa ăn đặc biệt cho người có dị ứng thực phẩm.
+                    </p>
+                </div>
     
-    <!-- Hành lý bổ sung -->
-    <div class="service-item">
-        <input type="checkbox" id="meal" name="meal">
-        <label for="meal">Chọn bữa ăn đặc biệt</label>
-        <p class="service-description">
-            Chọn một bữa ăn phù hợp với khẩu vị hoặc yêu cầu ăn kiêng của bạn. Các tùy chọn có thể bao gồm ăn chay, ăn kiêng gluten, hoặc các bữa ăn đặc biệt cho người có dị ứng thực phẩm.
-        </p>
-    </div>
-    
-    <!-- Hành lý bổ sung -->
-    <div class="service-item">
-        <input type="checkbox" id="extra-baggage" name="extra-baggage">
-        <label for="extra-baggage">Thêm hành lý ký gửi</label>
-        <p class="service-description">
-            Bạn có thể thêm hành lý ký gửi ngoài số lượng hành lý miễn phí theo quy định. Các gói hành lý có thể có trọng lượng khác nhau tùy theo yêu cầu.
-        </p>
-    </div>
+                <!-- Hành lý bổ sung -->
+                <div class="service-item">
+                    <input type="checkbox" id="extra-baggage" name="extra-baggage">
+                    <label for="extra-baggage">Thêm hành lý ký gửi</label>
+                    <p class="service-description">
+                    Bạn có thể thêm hành lý ký gửi ngoài số lượng hành lý miễn phí theo quy định. Các gói hành lý có thể có trọng lượng khác nhau tùy theo yêu cầu.
+                    </p>
+                </div>
 
-    <!-- Bảo hiểm chuyến bay -->
-    <div class="service-item">
-        <input type="checkbox" id="insurance" name="insurance">
-        <label for="insurance">Bảo hiểm chuyến bay</label>
-        <p class="service-description">
-            Bảo hiểm chuyến bay giúp bạn bảo vệ tài chính trong trường hợp xảy ra sự cố như hủy chuyến bay, hoãn chuyến hoặc mất hành lý. Đảm bảo chuyến đi của bạn an tâm hơn.
-        </p>
-    </div>
-</div>
+                <!-- Bảo hiểm chuyến bay -->
+                <div class="service-item">
+                    <input type="checkbox" id="insurance" name="insurance">
+                    <label for="insurance">Bảo hiểm chuyến bay</label>
+                    <p class="service-description">
+                    Bảo hiểm chuyến bay giúp bạn bảo vệ tài chính trong trường hợp xảy ra sự cố như hủy chuyến bay, hoãn chuyến hoặc mất hành lý. Đảm bảo chuyến đi của bạn an tâm hơn.
+                    </p>
+                </div>
+            </div>
 
-<!-- Trải nghiệm cùng QAirline -->
-<div class="experience">
-    <h2>Trải nghiệm cùng QAirline</h2>
-    <img src="img/experience_QA.jpg" alt="Trải nghiệm hạng ghế" class="experience-img"> <!-- Thêm hình ảnh -->
-    <p class="experience-description">Chọn trải nghiệm hạng ghế: Phổ thông, Thương gia, Hạng nhất</p>
-    <div class="experience-options">
-        <button class="experience-btn" onclick="showExperience('economy')">Phổ thông</button>
-        <button class="experience-btn" onclick="showExperience('business')">Thương gia</button>
-        <button class="experience-btn" onclick="showExperience('first')">Hạng nhất</button>
-    </div>
-    <div id="experience-detail" class="experience-detail">
-        <!-- Nội dung sẽ được thay đổi khi người dùng chọn từng hạng ghế -->
-    </div>
+            <!-- Trải nghiệm cùng QAirline -->
+            <div class="experience">
+                <h2>Trải nghiệm cùng QAirline</h2>
+                <img src="img/experience_QA.jpg" alt="Trải nghiệm hạng ghế" class="experience-img"> <!-- Thêm hình ảnh -->
+                <p class="experience-description">Chọn trải nghiệm hạng ghế: Phổ thông, Thương gia, Hạng nhất</p>
+                <div class="experience-options">
+                    <button class="experience-btn" onclick="showExperience('economy')">Phổ thông</button>
+                    <button class="experience-btn" onclick="showExperience('business')">Thương gia</button>
+                    <button class="experience-btn" onclick="showExperience('first')">Hạng nhất</button>
+                </div>
+                <div id="experience-detail" class="experience-detail">
+                <!-- Nội dung sẽ được thay đổi khi người dùng chọn từng hạng ghế -->
+                </div>
 
-    <div class="experience-radio">
-        <p>Chọn hạng ghế của bạn:</p>
-        <label>
-            <input type="radio" name="seat-class" value="economy"> Phổ thông
-        </label>
-        <label>
-            <input type="radio" name="seat-class" value="business"> Thương gia
-        </label>
-        <label>
-            <input type="radio" name="seat-class" value="first-class"> Hạng nhất
-        </label>
-    </div>
-</div>
-
+                <div class="experience-radio">
+                    <p>Chọn hạng ghế của bạn:</p>
+                    <label>
+                        <input type="radio" name="seat-class" value="economy"> Phổ thông
+                    </label>
+                    <label>
+                        <input type="radio" name="seat-class" value="business"> Thương gia
+                    </label>
+                    <label>
+                        <input type="radio" name="seat-class" value="first-class"> Hạng nhất
+                    </label>
+                </div>
+            </div>
 
             <!-- Sản phẩm bổ trợ -->
             <div class="add-ons">
@@ -187,15 +183,59 @@
     </section>
 
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-info">
-            <p>QAirline - Hành trình của bạn, trách nhiệm của chúng tôi.</p>
-            <p>© 2024 QAirline. All Rights Reserved.</p>
+<!-- Nút chat -->
+<div class="chat-widget">
+    <button id="chatBtn" class="chat-btn">
+        <img src="/img/chat_icon.png" alt="Chat Icon" class="chat-icon"> Chat với QAMI
+    </button>
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+          <img src="/img/logo_tachnen.png" alt="Logo" class="chatbox-logo">
+          <div class="header-text">
+            <h2>QAirline Love You</h2>
+            <p>Chào bạn đến với QAirline. Bạn hãy giới thiệu về mình để cùng trò chuyện với QAmy. Chúc bạn ngày tốt lành, thật nhiều niềm vui bạn nhé.</p>
+          </div>
         </div>
-    </footer>
+        <div class="chatbox-body">
+          <div class="messages">
+            <p>Xin chào! Tôi là AMI, bạn cần tôi giúp gì hôm nay?</p>
+          </div>
+          <input type="text" placeholder="Nhập câu hỏi..." id="chatInput" />
+          <button id="sendMessage" class="send-btn">Gửi</button>
+        </div>
+    </div>
+</div>
 
-    <script src="js/booking.js"></script>
+
+<!-- Phần Footer -->
+<footer>
+    <div class="footer-column">
+      <h3>Kết nối với QAirline</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-instagram" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-youtube" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-twitter" style="color: #09096a;"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+        <h3> Hướng dẫn đặt chuyến bay</h3>
+        <p style="font-style: italic;">Tải ứng dụng di động QAirline</p>
+        <div class="app-icons">
+          <a href="#"><img src="/img/logoAppstoro.png" alt="App Store"></a>
+          <a href="#"><img src="/img/logo_googlePlay.png" alt="Google Play"></a>
+        </div>
+    </div>
+    <div class="footer-column">
+        <h3>Hướng dẫn thanh toán nhanh</h3>
+        <img src="/img/logo_footer.png" alt="Payment Icon" class="payment-icon" style="height: 100px;width: 150px;">
+    </div>
+    <div class="footer-column">
+      <h3>CÔNG TY CỔ PHẦN HÀNG KHÔNG QAIRLINE</h3>
+      <p>144 Xuân Thủy, Quận Cầu Giấy, TP Hà Nội, Việt Nam.</p>
+      <p>Chịu trách nhiệm nội dung: Thành viên nhóm QAirline</p>
+    </div>
+</footer>
 </body>
-
 </html>
+

@@ -8,6 +8,9 @@
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Sử dụng Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Để sử dụng Font Awesome icons -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -16,37 +19,38 @@
   <!-- Navigation Bar -->
   <header>
     <nav>
-      <img src="img/logo.png" alt="QAirline Logo" class="logo" style="height: 120px;">
+      <img src="img/logo_tachnen.png" alt="QAirline Logo" class="logo" style="height: 120px;">
       
       
-      <ul class="menu">
-        <li><a href="#home">Trang chủ</a></li>
-        <li><a href="#booking">Đặt vé</a></li>
-        <li><a href="#services">Dịch vụ</a></li>
-        <li><a href="#contact">Thông tin hành trình</a></li>
-        <li><a href="#about">Liên hệ</a></li>
+      <ul class="menu gradient-text">
+        <li><a href="#home">TRANG CHỦ</a></li>
+        <li><a href="#booking">ĐẶT VÉ</a></li>
+        <li><a href="#services">DỊCH VỤ</a></li>
+        <li><a href="#contact">THÔNG TIN HÀNH TRÌNH</a></li>
+        <li><a href="#about">LIÊN HỆ</a></li>
       </ul>
 
-    <!-- Các biểu tượng bổ sung -->
-    <div class="additional-icons">
-        <!-- Hàng đầu tiên: Trợ giúp và ngôn ngữ -->
-        <div class="top-row">
-          <button class="help-btn-text">
-            <i class="fa fa-search"></i> TRỢ GIÚP
-          </button>
-          <div class="language-selector">
-            <select>
-              <option value="vi">Tiếng Việt</option>
-              <option value="en">English</option>
-              <option value="cn">中文</option>
-            </select>
-          </div>
-        </div>
-  
+     <!-- Các biểu tượng bổ sung -->
+     <div class="additional-icons">
+      <!-- Hàng đầu tiên: Trợ giúp và ngôn ngữ -->
+      <div class="top-row">
+        <button class="help-btn">
+          <i class="fa fa-search"></i> TRỢ GIÚP
+        </button>
 
-      <div class="auth-btns">
-        <button class="login-btn">Đăng nhập</button>
-        <button class="register-btn">Đăng ký</button>
+        <div class="language-selector">
+          <select>
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+            <option value="cn">中文</option>
+          </select>
+        </div>
+      </div>
+
+        <!-- Liên kết Đăng ký | Đăng nhập -->
+        <div class="auth-links" style="color: rgb(111, 10, 188);font-weight: bold;padding: 5px 5px 5px 25px;">
+          <a href="#" class="login-link">Đăng nhập</a> | <a href="#" class="register-link">Đăng ký</a>
+        </div>
       </div>
 
     </nav>
@@ -54,38 +58,14 @@
 
   <!-- Banner Section -->
   <section class="banner">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <img src="img/banner 1.avif" alt="Slide 1">
-          <div class="slide-content">
-            <h1>Bay cùng QAirline</h1>
-            <p>Trải nghiệm bay chất lượng hàng đầu</p>
-          </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <img src="img/banner 2.avif" alt="Slide 2">
-          <div class="slide-content">
-            <h1>Hành trình tuyệt vời</h1>
-            <p>Cùng chúng tôi khám phá thế giới</p>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="swiper-slide">
-          <img src="img/banner 3.webp" alt="Slide 3">
-          <div class="slide-content">
-            <h1>Đẳng cấp hàng không</h1>
-            <p>Mang đến trải nghiệm bay hoàn hảo</p>
-          </div>
-        </div>
-      </div>
-      <!-- Navigation buttons -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <!-- Pagination -->
-      <div class="swiper-pagination"></div>
+    <!-- Video Background -->
+    <video autoplay loop muted class="background-video">
+      <source src="/mp4/banner_home.mp4" type="video/mp4">
+    </video>
+  
+    <!-- Airplane Logo -->
+    <div class="airplane-logo">
+      <img src="/img/logo_plane_home.png" alt="Airplane Logo">
     </div>
   </section>
   
@@ -164,43 +144,6 @@
     </div>
   </section>
 
-
-<!-- Phần hỗ trợ khách hàng (Chat với QAirline) -->
-<section id="customer-support">
-  <div class="support-container">
-      <!-- Biểu tượng chat -->
-      <div class="support-icon">
-          <img src="img/chat-icon.png" alt="Chat Icon">
-      </div>
-      <!-- Nội dung hỗ trợ khách hàng -->
-      <div class="support-text">
-          <h3>Chat với QAirline</h3>
-          <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn!</p>
-          <!-- Nút bắt đầu trò chuyện -->
-          <button class="chat-btn" onclick="openChat()">Bắt đầu trò chuyện</button>
-      </div>
-  </div>
-</section>
-
-<!-- Cửa sổ Modal Chat -->
-<div id="chat-modal" class="modal">
-  <div class="modal-content">
-      <span class="close-btn" onclick="closeChat()">&times;</span>
-      <h2 style="color: #02029c;">Trò chuyện với QAirline</h2>
-      <div class="chatbox">
-          <!-- Nội dung chat có thể được thêm vào đây hoặc tích hợp với dịch vụ chat -->
-          <div class="messages">
-              <div class="message bot-message">
-                  <p>Chào bạn! Chúng tôi có thể giúp gì cho bạn?</p>
-              </div>
-          </div>
-          <input type="text" placeholder="Nhập câu hỏi..." class="chat-input">
-          <button class="send-btn">Gửi</button>
-      </div>
-  </div>
-</div>
-
-  
 <!-- Phần Dịch vụ bổ trợ -->
 <section id="add-on-services">
     <h2>Dịch vụ bổ trợ</h2>
@@ -294,13 +237,53 @@
   </section>
   
   
-  <!-- Phần Logo và Slogan Trước Footer -->
-<section class="qairline-info">
-  <div class="qairline-logo-container">
-    <img src="img/logo.png" alt="QAirline Logo" class="qairline-logo">
-    <p class="qairline-slogan">An toàn trên từng chuyến bay</p>
+<!-- Phần Logo và Slogan Trước Footer -->
+<section class="qairline-journey">
+  <div class="qairline-header">
+    <h2 class="gradient-text">QAirline - Hành trình của tương lai</h2>
+    <img src="/img/plane_tachnen.png" alt="Máy bay đang bay" class="airplane-image">
+  </div>
+
+  <div class="info-columns">
+    <div class="column gradient-text">240+ đường bay nội địa</div>
+    <div class="column gradient-text">400+ chuyến bay mỗi ngày</div>
+    <div class="column gradient-text">8000+ Nhân viên thân thiện, tận tình</div>
+    <div class="column gradient-text">200+ Tàu bay mới hiện đại, bảo vệ môi trường</div>
+    <div class="column gradient-text">
+      <div class="stars">⭐⭐⭐⭐⭐
+        <p style="font-size: 16px;">Xếp hạng hàng không an toàn cao nhất thế giới</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qairline-summary">
+    <p class="gradient-text">Cùng QAirLine trải nghiệm chuyến hành trình xanh!</p>
   </div>
 </section>
+
+
+<!-- Nút chat -->
+<div class="chat-widget">
+  <button id="chatBtn" class="chat-btn">
+      <img src="/img/chat_icon.png" alt="Chat Icon" class="chat-icon"> Chat với QAMI
+  </button>
+  <div id="chatbox" class="chatbox">
+      <div class="chatbox-header">
+        <img src="/img/logo_tachnen.png" alt="Logo" class="chatbox-logo">
+        <div class="header-text">
+          <h2>QAirline Love You</h2>
+          <p>Chào bạn đến với QAirline. Bạn hãy giới thiệu về mình để cùng trò chuyện với QAmy. Chúc bạn ngày tốt lành, thật nhiều niềm vui bạn nhé.</p>
+        </div>
+      </div>
+      <div class="chatbox-body">
+        <div class="messages">
+          <p>Xin chào! Tôi là AMI, bạn cần tôi giúp gì hôm nay?</p>
+        </div>
+        <input type="text" placeholder="Nhập câu hỏi..." id="chatInput" />
+        <button id="sendMessage" class="send-btn">Gửi</button>
+      </div>
+  </div>
+</div>
 
   
   <!-- Footer -->
@@ -335,10 +318,10 @@
       <div class="footer-section">
         <h3>Kết nối với chúng tôi</h3>
         <ul class="social-links">
-          <li><a href="#"><img src="img/logoFB.png" alt="Facebook"></a></li>
-          <li><a href="#"><img src="img/logoTw.png" alt="Twitter"></a></li>
-          <li><a href="#"><img src="img/logoInsta.png" alt="Instagram"></a></li>
-          <li><a href="#"><img src="img/logoYT.png" alt="YouTube"></a></li>
+          <li><a href="https://facebook.com" class="social-icon bi bi-facebook" target="_blank" title="Facebook"></a></li>
+          <li><a href="https://instagram.com" class="social-icon bi bi-instagram" target="_blank" title="Instagram"></a></li>
+          <li><a href="https://youtube.com" class="social-icon bi bi-youtube" target="_blank" title="YouTube"></a></li>
+          <li><a href="https://twitter.com" class="social-icon bi bi-twitter" target="_blank" title="Twitter"></a></li>
         </ul>
       </div>
     </div>
@@ -350,9 +333,6 @@
   </footer>
   
   <script src="js/script.js"></script>
-  <script src="js/jquery-2.1.1.js"></script>
-  <script src="js/velocity.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
 

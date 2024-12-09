@@ -5,20 +5,44 @@ body {
     padding: 0;
   }
 
+/* Header với hiệu ứng gradient chuyển động */
 header {
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(to top left, #ccffff 0%, #ffccff 100%);
+  background-size: 400% 400%; /* Kích thước nền gradient để có không gian thay đổi */
+  animation: gradientAnimation 4s ease infinite; /* Áp dụng hiệu ứng gradient */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Animation cho hiệu ứng gradient chuyển động */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
   
 nav {
     display: flex;
     justify-content: space-between; /* Căn đều các phần tử bên trong */
     align-items: center;
     width: 100%;
+}
+
+.logo {
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng khi logo thay đổi */
 }
 
 header .menu {
@@ -34,85 +58,107 @@ header .menu {
 header .menu li {
     display: inline;
 }
+
+
+
   
 header .menu a {
     font-size: 18px;
-    color: rgb(140, 138, 138);
     font-weight: bold;
     text-decoration: none;
     padding: 5px 15px;
-
+    transition: color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng cho chữ */
 }
 
+.gradient-text a {
+  background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
+  -webkit-background-clip: text; /* Chỉ áp dụng gradient cho chữ */
+  color: transparent; /* Làm cho màu chữ gốc không hiển thị */
+}
+
+.gradient-text {
+  background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
+  -webkit-background-clip: text; /* Chỉ áp dụng gradient cho chữ */
+  color: transparent; /* Làm cho màu chữ gốc không hiển thị */
+}
+
+
+/* Hiệu ứng hover cho liên kết */
+.menu a:hover {
+  color: #260592; /* Thay đổi màu chữ khi hover */
+  transform: translateY(-5px); /* Di chuyển lên một chút khi hover */
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0066ff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Thêm hiệu ứng cho đường gạch dưới */
+.menu a:hover::after {
+  transform: scaleX(1); /* Hiển thị đường gạch dưới khi hover */
+}
+
+/* Hiệu ứng hover cho logo */
+.logo:hover {
+  transform: scale(1.1); /* Phóng to logo khi hover */
+}
+
+/* Các biểu tượng bổ sung */
 .additional-icons {
-    display: flex;
-    flex-direction: column; /* Sắp xếp các mục theo chiều dọc */
-    align-items: flex-end; /* Căn các mục về bên phải */
-    gap: 10px; /* Khoảng cách giữa các hàng */
-  }
-  
-  .top-row {
-    display: flex; /* Sắp xếp "Trợ giúp" và "Ngôn ngữ" theo hàng ngang */
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.help-btn-text {
-    background-color: white;
-    color: rgb(132, 131, 131);
-    border: none;
-    padding: 8px 20px;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    transition : background-color 0.3s ease, color 0.3s ease;
-    display : flex;
-    align-items: center;
-    gap: 10px;
+/* Trợ giúp và ngôn ngữ */
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-  
-.help-btn-text i {
-    font-size: 16px;
-  }
-  
-.help-btn-text:hover {
-    background-color: #ffd700;
-    color: black;
-  }
-  
-  .language-selector select {
-    background: none;
-    border: 1px solid #e0d6d6;
-    color: rgb(139, 133, 133);
-    padding: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-/* Nút Đăng nhập/Đăng ký */
-.auth-btns {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .auth-btns .login-btn,
-  .auth-btns .register-btn {
-    background-color: transparent;
-    color: rgb(58, 61, 255);
-    border: 2px solid #9396c1;
-    padding: 8px 20px;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+.help-btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(111, 10, 188);
+  font-size: 14px;
+  cursor: pointer;
 }
-  
-  .auth-btns .login-btn:hover,
-  .auth-btns .register-btn:hover {
-    background-color: #bbedfd;
-    color: black;
-  }
+
+.help-btn i {
+  margin-right: 5px;
+}
+
+.language-selector select {
+  background-color: transparent;
+  color: rgb(111, 10, 188);
+  border: 1px solid rgb(21, 0, 98);
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+/* Liên kết Đăng ký | Đăng nhập */
+.auth-links a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+/* Hiệu ứng hover cho các phần tử */
+.language-selector select:hover,
+.help-btn:hover,
+.auth-links a:hover {
+  background-color: #f49e00;  /* Màu vàng nhạt khi hover */
+}
   
 
 /* Navigation Bar */
@@ -207,14 +253,38 @@ header .menu a {
     }
   }
   
+/* Banner Styles */
 .banner {
-    position: relative;
-    background: url('../img/background.jpg') no-repeat center center/cover;
-    height: 1000px;
-    color: white;
-    text-align: center;
-    padding-top: 10px;
+  position: relative;
+  height: 1000px; /* Chiều cao của banner */
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
 
+/* Video Background */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo video vừa khít */
+  z-index: -1; /* Video nằm dưới các nội dung khác */
+}
+
+/* Airplane Logo */
+.airplane-logo {
+  position: absolute;
+  top: -150px; /* Khoảng cách từ trên xuống */
+  left: 100px; /* Khoảng cách từ bên trái */
+  z-index: 1; /* Đảm bảo logo máy bay nằm trên video */
+}
+
+.airplane-logo img {
+  width: 600px; /* Kích thước logo máy bay */
+  height: auto;
 }
   
 #booking {
@@ -343,7 +413,7 @@ button {
   /* Tiêu đề của các phần */
  .form-section h2 {
     text-align: center;
-    color: #004a99;
+    color: #5402bf;
     cursor: pointer;
   }
   
@@ -411,19 +481,25 @@ button {
 #add-on-services {
     margin-top: 40px;
     text-align: center;
+    background-color: #f7e9ff; 
+    padding: 40px 20px;
+    border-radius: 15px;
   }
   
   #add-on-services h2 {
     font-size: 2rem;
-    color: #004a99;
+    color: #5402bf;
     margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
   }
   
   .service-list {
     display: flex;
     justify-content: space-around; /* Các item cách đều nhau */
     flex-wrap: wrap; /* Cho phép các phần tử xuống dòng nếu không vừa màn hình */
-    gap: 30px; /* Khoảng cách giữa các item */
+    gap: 30px; 
+    margin-top: 20px;
   }
   
   .service-item {
@@ -432,42 +508,73 @@ button {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px; /* Đảm bảo chiều rộng của mỗi item là cố định */
+    width: 250px; 
+    transition: all 0.3s ease-in-out;
   }
-  
+
+  .service-item:hover {
+    transform: translateY(-10px); /* Hiệu ứng di chuyển lên khi hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Làm nổi bật thêm */
+  }
+
   .service-img {
     width: 100%;
     height: 150px;
     object-fit: cover; /* Đảm bảo hình ảnh không bị kéo giãn và vẫn giữ tỉ lệ */
     border-radius: 10px;
     margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
   }
   
+  .service-item:hover .service-img {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+  }
+
   .service-item h3 {
     font-size: 1.25rem;
-    color: #004a99;
+    color: #5402bf;
     margin-bottom: 10px;
   }
   
   .service-item p {
     font-size: 1rem;
     color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
   }
 
+  @media (max-width: 768px) {
+    .service-list {
+      justify-content: center;
+    }
+  
+    .service-item {
+      width: 180px; /* Thu nhỏ kích thước khi màn hình nhỏ */
+      padding: 20px 15px;
+    }
+  
+    #add-on-services h2 {
+      font-size: 2rem; /* Giảm kích thước chữ tiêu đề cho màn hình nhỏ */
+    }
+  }
+
+
   #popular-flights {
-    background-color: #deeaff;
+    background-image: url('/img/cloud.avif');
+    background-size: cover;
+    background-position: center;
     padding: 50px 20px;
     text-align: center;
   }
   
   #popular-flights h2 {
-    color: #004a99;
+    color: #5402bf;
     font-size: 2em;
     margin-bottom: 40px;
   }
   
   .flights-container {
-    color: #004a99;
+    color: #5402bf;
     display: flex;
     justify-content: space-between; /* Để các chuyến bay phân bố đều */
     flex-wrap: wrap; /* Cho phép các chuyến bay chuyển sang dòng tiếp theo khi hết chỗ */
@@ -606,32 +713,104 @@ footer {
 }
 
 /* Phần Logo và Slogan */
-.qairline-info {
+.qairline-journey {
+  background-image: url('/img/background_purple.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.qairline-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Định dạng container chứa tiêu đề và máy bay */
+.header-container {
+  display: flex;  /* Dùng flexbox để căn chỉnh */
+  align-items: center;  /* Căn giữa theo chiều dọc */
+  justify-content: center;  /* Căn giữa theo chiều ngang */
+}
+
+/* Định dạng hình ảnh máy bay */
+.airplane-image {
+  width: 80px;  /* Kích thước máy bay */
+  margin-left: 20px;  /* Khoảng cách giữa máy bay và dòng chữ */
+}
+
+/* Phần chứa 5 cột */
+.info-columns {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  padding: 20px 0;
+  margin-top: 30px;
 }
 
-.qairline-logo-container {
+/* Các cột với border hình bông hoa */
+.column {
+  position: relative;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #003366;
+  font-size: 16px;
+  text-align: center;
+  border: 5px solid transparent;
+  border-radius: 50%;  /* Góc bo tròn tạo ra hiệu ứng bông hoa */
+  background-clip: padding-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  /* Tạo bóng đổ để cột nổi bật */
+  width: 150px;
+  height: 150px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin: 10px;
+  animation: rippleEffect 2s ease-in-out infinite;
 }
 
-.qairline-logo {
-  height: 100px; /* Kích thước logo */
-  margin-right: 20px; /* Khoảng cách giữa logo và slogan */
+.column:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: -1;
 }
 
-.qairline-slogan {
-  color: #004a99;
+@keyframes rippleEffect {
+  0% {
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  50% {
+    transform: scale(1.2); /* Phóng to nhẹ */
+    opacity: 0.7; /* Giảm độ mờ một chút */
+  }
+  100% {
+    transform: scale(1); /* Quay lại kích thước ban đầu */
+    opacity: 1; /* Độ mờ quay lại ban đầu */
+  }
+}
+
+/* Phần nội dung của cột */
+.column .stars {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Tổng kết phần nội dung */
+.qairline-summary {
+  margin-top: 40px;
   font-size: 20px;
   font-weight: bold;
-  font-family: Arial, sans-serif;
-  margin-top: 0;
-  text-transform: uppercase; /* Để slogan chữ in hoa giống hình mẫu */
+  color: #003366;
 }
+
 
 footer {
   background-color: #030850;
@@ -651,145 +830,131 @@ footer {
   margin-bottom: 15px;
 }
 
-/* Phần hỗ trợ khách hàng - Chat với QAirline */
-#customer-support {
-  position: fixed;  /* Để phần này nằm cố định ở dưới */
-  bottom: 20px;  /* Cách dưới trang một chút */
-  right: 20px;  /* Cách phải trang một chút */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;  /* Đảm bảo phần này sẽ ở trên cùng */
-}
-
-.support-container {
-  background-color: rgba(255, 255, 255, 0.9);  /* Nền bán trong suốt */
-  padding: 20px;
-  border-radius: 10px;  /* Góc bo tròn */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);  /* Đổ bóng cho phần chat */
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 280px;  /* Chiều rộng của phần chat */
-}
-
-.support-icon img {
-  width: 60px;  /* Kích thước của biểu tượng chat */
-  height: 60px;
-}
-
-.support-text h3 {
-  margin: 0;
-  font-size: 18px;
-  color: #001197;
-}
-
-.support-text p {
-  margin: 5px 0;
-  font-size: 14px;
-  color: #666;
+/* Nút Chat */
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 .chat-btn {
-  background-color: #007bff;  /* Màu nền nút */
+  background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.chat-icon  {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  position: absolute;
+  left: -80px;
+  top: -10px;
+  transform: translateY(-50%);
 }
 
-.chat-btn:hover {
-  background-color: #0056b3;  /* Màu nền khi hover */
-}
-
-/* Cửa sổ Modal */
-.modal {
-  display: none;  /* Ẩn mặc định */
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
-}
-
-/* Nội dung cửa sổ modal */
-.modal-content {
-  background-color: white;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-/* Nút đóng modal */
-.close-btn {
-  color: #aaa;
-  float: right;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Cải thiện kiểu dáng chat box */
+/* Cửa sổ Chat */
 .chatbox {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 400px;
-  overflow-y: auto;
-  margin-top: 20px;
-}
-
-/* Các tin nhắn */
-.messages {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.message {
-  padding: 10px;
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 350px;
+  background-color: #fff;
   border-radius: 10px;
-  max-width: 80%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
 }
 
-.bot-message {
-  background-color: #f1f1f1;
-  align-self: flex-start;
-}
-
-.user-message {
-  background-color: #007bff;
+/* Header của chatbox */
+.chatbox-header {
+  background: linear-gradient(to right, #6600ff 0%, #cc00cc 100%);
   color: white;
-  align-self: flex-end;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Input và nút gửi */
-.chat-input {
+.chatbox-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header-text h2 {
+  color: #8cccff;
+  font-size: 20px;
+  font-weight: bolder;
+  margin:  0 0 20px 0;
+}
+
+.header-text p {
+  font-size: 14px;
+  color: #f0f0f0;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Phần thân của chatbox */
+.chatbox-body {
+  padding: 20px;
+  background-color: #f9f9f9;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.messages {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 15px;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox-body input {
   width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .send-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
   width: 100%;
+  padding: 10px;
+  background-color: #6600ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
   margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .send-btn:hover {
-  background-color: #0056b3;
+  background-color: #cc00cc;
+}
+
+/* Hiệu ứng khi chatbox mở ra */
+.chatbox.show {
+  display: block;
 }

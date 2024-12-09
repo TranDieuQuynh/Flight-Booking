@@ -6,34 +6,64 @@
     <title>Đăng Nhập | QAirline</title>
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
 </head>
 <body>
 
 <!-- Phần Navigation (Header) -->
 <header>
-    <div class="logo-container">
-        <img src="img/logo.png" alt="QAirline Logo" class="logo" style="height: 100px;">
-    </div>
-    <div class="header-right">
-        <a href="#" class="help-btn" style="text-decoration: none;" >
-            <i class="fa fa-search"></i> TRỢ GIÚP
-        </a>
-        <select class="language-select">
+    <nav>
+      <img src="img/logo_tachnen.png" alt="QAirline Logo" class="logo" style="height: 120px;">
+      
+      
+      <ul class="menu gradient-text">
+        <li><a href="#home">TRANG CHỦ</a></li>
+        <li><a href="#booking">ĐẶT VÉ</a></li>
+        <li><a href="#services">DỊCH VỤ</a></li>
+        <li><a href="#contact">THÔNG TIN HÀNH TRÌNH</a></li>
+        <li><a href="#about">LIÊN HỆ</a></li>
+      </ul>
+
+     <!-- Các biểu tượng bổ sung -->
+     <div class="additional-icons">
+      <!-- Hàng đầu tiên: Trợ giúp và ngôn ngữ -->
+      <div class="top-row">
+        <button class="help-btn">
+          <i class="fa fa-search"></i> TRỢ GIÚP
+        </button>
+
+        <div class="language-selector">
+          <select>
             <option value="vi">Tiếng Việt</option>
             <option value="en">English</option>
-        </select>
-    </div>
-</header>
+            <option value="cn">中文</option>
+          </select>
+        </div>
+      </div>
+
+        <!-- Liên kết Đăng ký | Đăng nhập -->
+        <div class="auth-links" style="color: rgb(111, 10, 188);font-weight: bold;padding: 5px 5px 5px 25px;">
+          <a href="#" class="login-link">Đăng nhập</a> | <a href="#" class="register-link">Đăng ký</a>
+        </div>
+      </div>
+
+    </nav>
+  </header>
 
 <!-- Phần Hình nền và Form Đăng Nhập -->
 <section id="login-section">
+
+    <div class="airplane-animation">
+        <img src="img/logo_plane_home.png" alt="Airplane" class="airplane">
+    </div>
+
     <div class="login-background"></div> <!-- Hình nền -->
 
     <!-- Form Đăng Nhập -->
     <div class="login-container">
         <div class="login-header">
-            <img src="img/logo.png" alt="Logo" class="form-logo" style="height: 100px;">
+            <img src="img/logo_tachnen.png" alt="Logo" class="form-logo" style="height: 100px;">
             <h2>Đăng Nhập</h2>
         </div>
 
@@ -45,7 +75,8 @@
                 <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
             </div>
 
-            <button type="submit" class="login-btn">Đăng nhập</button>
+            <button type="submit" class="login-btn">
+              <i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
 
             <div class="links">
                 <a href="#">Quên mật khẩu?</a>
@@ -55,22 +86,59 @@
     </div>
 </section>
 
+<!-- Nút chat -->
+<div class="chat-widget">
+    <button id="chatBtn" class="chat-btn">
+        <img src="/img/chat_icon.png" alt="Chat Icon" class="chat-icon"> Chat với QAMI
+    </button>
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+          <img src="/img/logo_tachnen.png" alt="Logo" class="chatbox-logo">
+          <div class="header-text">
+            <h2>QAirline Love You</h2>
+            <p>Chào bạn đến với QAirline. Bạn hãy giới thiệu về mình để cùng trò chuyện với QAmy. Chúc bạn ngày tốt lành, thật nhiều niềm vui bạn nhé.</p>
+          </div>
+        </div>
+        <div class="chatbox-body">
+          <div class="messages">
+            <p>Xin chào! Tôi là AMI, bạn cần tôi giúp gì hôm nay?</p>
+          </div>
+          <input type="text" placeholder="Nhập câu hỏi..." id="chatInput" />
+          <button id="sendMessage" class="send-btn">Gửi</button>
+        </div>
+    </div>
+</div>
+
 <!-- Phần Footer -->
 <footer>
-    <div class="footer-container">
-        <div class="footer-logo">
-            <img src="img/logo.png" alt="QAirline Logo" class="footer-logo-img">
+    <div class="footer-column">
+      <h3>Kết nối với QAirline</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-instagram" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-youtube" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-twitter" style="color: #09096a;"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+        <h3> Hướng dẫn đặt chuyến bay</h3>
+        <p style="font-style: italic;">Tải ứng dụng di động QAirline</p>
+        <div class="app-icons">
+          <a href="#"><img src="/img/logoAppstoro.png" alt="App Store"></a>
+          <a href="#"><img src="/img/logo_googlePlay.png" alt="Google Play"></a>
         </div>
-        <div class="footer-links">
-            <ul>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Điều khoản sử dụng</a></li>
-                <li><a href="#">Chính sách bảo mật</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </div>
+    </div>
+    <div class="footer-column">
+        <h3>Hướng dẫn thanh toán nhanh</h3>
+        <img src="/img/logo_footer.png" alt="Payment Icon" class="payment-icon" style="height: 100px;width: 150px;">
+    </div>
+    <div class="footer-column">
+      <h3>CÔNG TY CỔ PHẦN HÀNG KHÔNG QAIRLINE</h3>
+      <p>144 Xuân Thủy, Quận Cầu Giấy, TP Hà Nội, Việt Nam.</p>
+      <p>Chịu trách nhiệm nội dung: Thành viên nhóm QAirline</p>
     </div>
 </footer>
 
+<script src="/js/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - QAirline</title>
+    <link rel="stylesheet" href="/css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <img src="/img/logo.jpg" alt="QAirline Logo" class="logo">
+            <nav class="navigation">
+                <a href="/" class="home-link gradient-text">Trang Chủ</a>
+                <select class="language-select gradient-text">
+                    <option value="vi" style="color: rgb(109, 107, 107);">Tiếng Việt</option>
+                    <option value="en" style="color:rgb(109, 107, 107) ;">English</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="payment-content">
+            <div class="payment-header">
+                <img src="/img/logo_tachnen.png" alt="QAirline Logo" class="payment-logo">
+                <h2 class="gradient-text">Trang Thanh Toán</h2>
+            </div>
+
+            <!-- Chọn phương thức thanh toán với hình ảnh -->
+            <div class="payment-methods">
+                <label class="method">
+                    <input type="radio" name="payment-method" value="visa" checked>
+                    <img src="/img/logovisa.png" alt="Visa" class="payment-icon">
+                </label>
+                <label class="method">
+                    <input type="radio" name="payment-method" value="paypal">
+                    <img src="/img/logopaypal.png" alt="PayPal" class="payment-icon">
+                </label>
+            </div>
+
+            <form class="payment-form">
+                <label for="nameOnCard">Tên trên thẻ</label>
+                <input type="text" id="nameOnCard" placeholder="Tên trên thẻ" required>
+
+                <label for="cardNumber">Số thẻ</label>
+                <input type="text" id="cardNumber" placeholder="Số thẻ" required>
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="CVV" required>
+
+                <label for="expiration">Ngày hết hạn</label>
+                <input type="text" id="expiration" placeholder="MM/YY" required>
+
+
+                <button type="submit" class="submit-btn">Thanh Toán</button>
+            </form>
+        </div>
+    </section>
+ 
+
+    <footer>
+        <div class="footer-column">
+          <h3>Kết nối với QAirline</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook" style="color: #09096a;"></i></a>
+            <a href="#"><i class="fab fa-instagram" style="color: #09096a;"></i></a>
+            <a href="#"><i class="fab fa-youtube" style="color: #09096a;"></i></a>
+            <a href="#"><i class="fab fa-twitter" style="color: #09096a;"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+            <h3> Hướng dẫn đặt chuyến bay</h3>
+            <p style="font-style: italic;">Tải ứng dụng di động QAirline</p>
+            <div class="app-icons">
+              <a href="#"><img src="/img/logoAppstoro.png" alt="App Store"></a>
+              <a href="#"><img src="/img/logo_googlePlay.png" alt="Google Play"></a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Hướng dẫn thanh toán nhanh</h3>
+            <img src="/img/logo_footer.png" alt="Payment Icon" class="payment-icon" style="height: 100px;width: 150px;">
+        </div>
+        <div class="footer-column">
+          <h3>CÔNG TY CỔ PHẦN HÀNG KHÔNG QAIRLINE</h3>
+          <p>144 Xuân Thủy, Quận Cầu Giấy, TP Hà Nội, Việt Nam.</p>
+          <p>Chịu trách nhiệm nội dung: Thành viên nhóm QAirline</p>
+        </div>
+      </footer>
+      
+    
+</body>
+</html>

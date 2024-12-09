@@ -32,29 +32,32 @@ document.querySelectorAll('.form-section h2').forEach(section => {
 
 
 
-// Hàm mở cửa sổ chat
-function openChat() {
-  document.getElementById("chat-modal").style.display = "block";  // Hiển thị modal
-}
+// Mở/Đóng cửa sổ chat
+document.getElementById("chatBtn").addEventListener("click", function() {
+  var chatbox = document.getElementById("chatbox");
+  chatbox.classList.toggle("show"); // Toggle trạng thái hiển thị cửa sổ chat
+});
 
-// Hàm đóng cửa sổ chat
-function closeChat() {
-  document.getElementById("chat-modal").style.display = "none";  // Ẩn modal
-}
+// Đóng cửa sổ chat khi nhấn nút đóng
+document.getElementById("closeChat").addEventListener("click", function() {
+  var chatbox = document.getElementById("chatbox");
+  chatbox.classList.remove("show"); // Ẩn cửa sổ chat
+});
 
-// Mã thêm tin nhắn vào chat box (cho người dùng)
-document.querySelector('.send-btn').addEventListener('click', function() {
-  let messageInput = document.querySelector('.chat-input').value;
-  if (messageInput) {
-      let messageContainer = document.querySelector('.messages');
-      let userMessage = document.createElement('div');
-      userMessage.classList.add('message', 'user-message');
-      userMessage.innerText = messageInput;
-      messageContainer.appendChild(userMessage);
-      document.querySelector('.chat-input').value = ''; // Xóa input sau khi gửi
-      messageContainer.scrollTop = messageContainer.scrollHeight; // Cuộn xuống tin nhắn mới
+// Gửi tin nhắn
+document.getElementById("sendMessage").addEventListener("click", function() {
+  var input = document.getElementById("chatInput");
+  var messages = document.querySelector(".messages");
+
+  if (input.value.trim() !== "") {
+    var newMessage = document.createElement("p");
+    newMessage.textContent = input.value;
+    messages.appendChild(newMessage);
+    input.value = ""; // Xóa nội dung input sau khi gửi
+    messages.scrollTop = messages.scrollHeight; // Cuộn xuống dưới
   }
 });
+
 
 
   
