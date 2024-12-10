@@ -9,19 +9,44 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <img src="/img/logo.jpg" alt="QAirline Logo" class="logo">
-            <nav class="navigation">
-                <a href="/" class="home-link gradient-text">Trang Chủ</a>
-                <select class="language-select gradient-text">
-                    <option value="vi" style="color: rgb(109, 107, 107);">Tiếng Việt</option>
-                    <option value="en" style="color:rgb(109, 107, 107) ;">English</option>
-                </select>
-            </nav>
-        </div>
-    </header>
+    <header>
+        <nav>
+          <img src="img/logo_tachnen.png" alt="QAirline Logo" class="logo" style="height: 120px;">
+          
+          
+          <ul class="menu gradient-text">
+            <li><a href="#home">TRANG CHỦ</a></li>
+            <li><a href="#booking">ĐẶT VÉ</a></li>
+            <li><a href="#services">DỊCH VỤ</a></li>
+            <li><a href="#contact">THÔNG TIN HÀNH TRÌNH</a></li>
+            <li><a href="#about">LIÊN HỆ</a></li>
+          </ul>
+    
+         <!-- Các biểu tượng bổ sung -->
+         <div class="additional-icons">
+          <!-- Hàng đầu tiên: Trợ giúp và ngôn ngữ -->
+          <div class="top-row">
+            <button class="help-btn">
+              <i class="fa fa-search"></i> TRỢ GIÚP
+            </button>
+    
+            <div class="language-selector">
+              <select>
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English</option>
+                <option value="cn">中文</option>
+              </select>
+            </div>
+          </div>
+    
+            <!-- Liên kết Đăng ký | Đăng nhập -->
+            <div class="auth-links" style="color: rgb(111, 10, 188);font-weight: bold;padding: 5px 5px 5px 25px;">
+              <a href="#" class="login-link">Đăng nhập</a> | <a href="#" class="register-link">Đăng ký</a>
+            </div>
+          </div>
+    
+        </nav>
+      </header>
 
     <!-- Payment Section -->
     <section class="payment-section">

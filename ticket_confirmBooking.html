@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAirline - Đặt vé thành công</title>
+    <link rel="stylesheet" href="/css/ticket_confirmBooking.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="booking-success">
+        <!-- Banner cảm ơn -->
+        <div class="banner">
+            <h1><i class="fas fa-check-circle"></i> Cảm ơn bạn đã đặt vé!</h1>
+            <p>Vé của bạn đã được đặt thành công. Dưới đây là thông tin chi tiết.</p>
+        </div>
+
+        <!-- Thông tin vé -->
+        <div class="ticket-info">
+            <div class="header-info">
+                <img src="/img/logo_tachnen.png" alt="QAirline Logo" class="logo">
+                <img src="/img/qr_code.png" alt="QR Code" class="qr-code">
+            </div>
+
+            <h2>Thông tin vé</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Mã vé</th>
+                        <td>Q123456789</td>
+                    </tr>
+                    <tr>
+                        <th>Hành khách</th>
+                        <td>Nguyễn Văn A</td>
+                    </tr>
+                    <tr>
+                        <th>Chuyến bay</th>
+                        <td>Hà Nội (HAN) - TP. HCM (SGN)</td>
+                    </tr>
+                    <tr>
+                        <th>Thời gian</th>
+                        <td>12/12/2024, 10:00 AM</td>
+                    </tr>
+                    <tr>
+                        <th>Ghế ngồi</th>
+                        <td>12A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Nút hành động -->
+        <div class="action-buttons">
+            <button class="download-btn">
+                <i class="fas fa-file-download"></i> Tải vé (PDF)
+            </button>
+            <button class="email-btn">
+                <i class="fas fa-envelope"></i> Gửi qua email
+            </button>
+        </div>
+    </div>
+
+    <footer class="qairline-footer">
+        <button class="home-button">
+            <i class="fas fa-home"></i> Quay về trang chủ
+        </button>
+    </footer>
+    
+</body>
+</html>

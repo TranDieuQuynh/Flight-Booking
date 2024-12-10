@@ -1,0 +1,478 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 200px; 
+    background: url('/img/seatSelection.png') no-repeat center center; 
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Nội dung bên trong header */
+.header-content {
+    position: relative;
+    z-index: 1;  
+}
+
+/* Quay về trang chủ */
+.back-home {
+    position: absolute;
+    top: 80px;
+    left: -500px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: rgba(167, 52, 255, 0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex
+;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+/* Icon trong back-home */
+.back-home i {
+    font-size: 20px; 
+}
+
+/* Hiệu ứng hover cho back-home */
+.back-home:hover {
+    background: rgba(145, 137, 255, 0.7); 
+    transform: scale(1.05); 
+    cursor: pointer;
+}
+
+/* Tiêu đề chính */
+.header-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+
+/* Phần chứa bảng giá vé */
+.ticket-prices {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.ticket-prices h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #550484;
+}
+
+/* Bảng giá vé */
+.ticket-prices table {
+    width: 50%; 
+    margin: 0 auto; 
+    border-collapse: collapse; 
+    background-color: #ffd9fc; 
+    box-shadow: 0px 4px 8px rgba(132, 0, 121, 0.2); 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+/* Tiêu đề bảng */
+.ticket-prices th {
+    padding: 15px 10px; /* Khoảng cách bên trong ô */
+    text-transform: uppercase; /* Viết hoa chữ */
+    background: linear-gradient(to left, #6600ff 0%, #ff66cc 100%); /* Gradient cho tiêu đề */
+    color: white; /* Màu chữ */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Các hàng trong bảng */
+.ticket-prices td {
+    padding: 10px 15px;
+    text-align: left; /* Căn trái nội dung */
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #ddd; /* Đường kẻ dưới */
+}
+
+/* Tô màu cho các hàng chẵn */
+.ticket-prices tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+/* Tô màu khi di chuột vào hàng */
+.ticket-prices tr:hover td {
+    background-color: #e6e6ff; /* Màu nền khi hover */
+    cursor: pointer; /* Hiển thị con trỏ dạng tay */
+}
+
+
+
+.plane-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.plane {
+    position: relative;
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+    background: linear-gradient(to top left, #cc99ff 0%, #ffffff 100%);
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 8px rgba(161, 2, 192, 0.7); 
+}
+
+
+.cockpit {
+    text-align: center;
+    margin: 0 auto; 
+    width: 200px; 
+    background-color: #b96aff8a; 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(148, 0, 222, 0.7); 
+}
+
+.cockpit h2 {
+    font-size: 24px; 
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to left, #6600ff 0%, #ff66cc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    margin: 0;
+    padding: 0;
+}
+
+
+.cabin {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cabin h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+    color: #1b0278; 
+    display: block;
+    visibility: visible; 
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.seat {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #8f0ef6;
+    font-size: 14px;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.seat.available {
+    background: #fff9d9;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.seat.available:hover {
+    transform: scale(1.2); 
+    background: #0099ff; 
+    box-shadow: 0px 4px 8px rgba(40, 0, 238, 0.2); 
+    cursor: pointer; 
+}
+
+
+.seat.unavailable {
+    background: rgba(161, 2, 192, 0.7);
+    color: white;
+    cursor: not-allowed;
+}
+
+.exit {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background: #ffcccc;
+    margin: 10px 0;
+    font-weight: bold;
+    box-shadow: 2px 5px rgb(255 70 70 / 80%);
+}
+
+/* Phần chứa Exit và Restroom */
+.exit-restroom-container {
+    display: flex;
+    justify-content: space-between; /* Đặt Exit bên trái và Restroom bên phải */
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Kiểu dáng Exit */
+.exit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    background: #ffcccc;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Kiểu dáng Restroom */
+.restroom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    background: #d58dff;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgb(184 9 239 / 80%);
+}
+
+
+.legend {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.legend p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+
+/* Hàng ghế hạng nhất */
+#first-class .row {
+    display: grid;
+    grid-template-columns: 50px 150px 50px 50px;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+
+/* Hàng ghế hạng thương gia */
+#business-class .row {
+    display: grid;
+    grid-template-columns: 50px 150px 50px 50px;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Hàng ghế hạng phổ thông */
+#economy-class .row {
+    display: grid;
+    grid-template-columns: 50px 50px 150px 50px 50px 50px;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.app-icons {
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .app-icons a {
+    display: inline-block;
+    margin-right: 10px; 
+  }
+  
+  .app-icons img {
+    width: 100px;  
+    height: auto;  
+    vertical-align: middle; 
+  }
+  
+  
+  .footer-column .payment-icons i {
+    font-size: 30px;  
+  }
+  
+
+/* Responsive Design for small screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-logo,
+    .footer-links,
+    .footer-social {
+        text-align: center;
+    }
+}
+
+/* Nút Chat */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .chat-btn {
+    background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 80px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+  .chat-icon  {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    position: absolute;
+    left: -80px;
+    top: -10px;
+    transform: translateY(-50%);
+  }
+  
+  /* Cửa sổ Chat */
+.chatbox {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Header của chatbox */
+  .chatbox-header {
+    background: linear-gradient(to right, #6600ff 0%, #cc00cc 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .chatbox-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .header-text h2 {
+    color: #8cccff;
+    font-size: 20px;
+    font-weight: bolder;
+    margin:  0 0 20px 0;
+  }
+  
+  .header-text p {
+    font-size: 14px;
+    color: #f0f0f0;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  /* Phần thân của chatbox */
+  .chatbox-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .messages {
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chatbox-body input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .send-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #6600ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .send-btn:hover {
+    background-color: #cc00cc;
+  }
+  
+  /* Hiệu ứng khi chatbox mở ra */
+  .chatbox.show {
+    display: block;
+  }

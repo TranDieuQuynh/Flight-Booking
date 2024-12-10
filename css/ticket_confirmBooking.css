@@ -1,0 +1,173 @@
+/* Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom left, #6600cc, #ff66cc);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.booking-success {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: url('/img/background_ticket.png') no-repeat center center;
+    background-size: cover;
+    color: rgb(122, 3, 155);
+    font-family: Arial, sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+/* Lớp phủ để nội dung dễ đọc */
+.booking-success::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Bao phủ toàn bộ container */
+    border-radius: 15px;
+    z-index: 0; 
+}
+
+/* Nội dung nằm trên lớp phủ */
+.booking-success > * {
+    position: relative;
+    z-index: 1; 
+}
+
+/* Banner cảm ơn */
+.banner h1 {
+    font-size: 24px;
+    color: #6600cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa icon và chữ */
+}
+
+.banner p {
+    font-size: 16px;
+    margin: 10px 0 20px;
+}
+
+/* Thông tin vé */
+.ticket-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #6600cc;
+}
+
+.ticket-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.ticket-info th, .ticket-info td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.ticket-info th {
+    background: #f9f9f9;
+    color: #333;
+}
+
+.ticket-info td {
+    background: #fff;
+}
+
+/* Nút hành động */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn {
+    background: #6600cc;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+    background: #5500a6;
+}
+
+.email-btn {
+    background: #ff66cc;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.email-btn:hover {
+    background: #e055b5;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+/* Logo và QR Code */
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.qr-code {
+    width: 150px;
+    height: auto;
+}
+
+/* Nút "Quay về trang chủ" */
+.home-button {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background: linear-gradient(to bottom left, #81a9ff, #ffe3f6);
+    color: rgb(135, 12, 192);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-button:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+.home-button i {
+    font-size: 20px; 
+}

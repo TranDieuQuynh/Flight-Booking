@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - QAirline</title>
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <img src="img/logo_tachnen.png" alt="QAirline Logo" class="logo" style="height: 120px;">
+          
+          
+          <ul class="menu gradient-text">
+            <li><a href="#home">TRANG CHỦ</a></li>
+            <li><a href="#booking">ĐẶT VÉ</a></li>
+            <li><a href="#services">DỊCH VỤ</a></li>
+            <li><a href="#contact">THÔNG TIN HÀNH TRÌNH</a></li>
+            <li><a href="#about">LIÊN HỆ</a></li>
+          </ul>
+    
+         <!-- Các biểu tượng bổ sung -->
+         <div class="additional-icons">
+          <!-- Hàng đầu tiên: Trợ giúp và ngôn ngữ -->
+          <div class="top-row">
+            <button class="help-btn">
+              <i class="fa fa-search"></i> TRỢ GIÚP
+            </button>
+    
+            <div class="language-selector">
+              <select>
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English</option>
+                <option value="cn">中文</option>
+              </select>
+            </div>
+          </div>
+    
+            <!-- Liên kết Đăng ký | Đăng nhập -->
+            <div class="auth-links" style="color: rgb(111, 10, 188);font-weight: bold;padding: 5px 5px 5px 25px;">
+              <a href="#" class="login-link">Đăng nhập</a> | <a href="#" class="register-link">Đăng ký</a>
+            </div>
+          </div>
+    
+        </nav>
+      </header>
+
+
+
+    <section class="navigation">
+        <img src="/img/banner_contact.png" alt="Hình ảnh navigation" class="navigation-image">
+    </section>
+    <main>
+        <section class="contact-section">
+            <div class="contact-container">
+                <!-- Cột 1: Liên hệ với chúng tôi -->
+                <div class="contact-info">
+                    <h1>Liên hệ với chúng tôi</h1>
+                    <p>Địa chỉ: 144 Đường Xuân Thủy, Quận Cầu Giấy, Hà Nội</p>
+                    <p>Email: <a href="mailto:contact@qairline.com">contact@qairline.com</a></p>
+                    <p>Điện thoại: <a href="tel:+84123456789">+84 123 456 789</a></p>
+                    <div class="map-container">
+                      <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.906492708345!2d105.7749183154021!3d21.03576179292664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5a0a8a5b8b%3A0x6f9c8f9e8f8e8f8e!2zMTQ0IFh1w6JuIFRo4buneSwgQ2F1IEdp4bqleSwgSGFub2kgMTIwMDAw!5e0!3m2!1svi!2s!4v1600000000000!5m2!1svi!2s"
+                          width="600"
+                          height="450"
+                          style="border:0;"
+                          allowfullscreen=""
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    </div>
+                </div>
+                <!-- Cột 2: Gửi thông điệp cho chúng tôi -->
+                <div class="contact-form-container">
+                    <h2>Gửi thông điệp cho chúng tôi</h2>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Tên của bạn" required>
+                        <input type="email" placeholder="Email của bạn" required>
+                        <textarea placeholder="Lời nhắn của bạn" rows="5" required></textarea>
+                        <button type="submit">Gửi</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- Nút chat -->
+<div class="chat-widget">
+    <button id="chatBtn" class="chat-btn">
+        <img src="/img/chat_icon.png" alt="Chat Icon" class="chat-icon"> Chat với QAMI
+    </button>
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+          <img src="/img/logo_tachnen.png" alt="Logo" class="chatbox-logo">
+          <div class="header-text">
+            <h2>QAirline Love You</h2>
+            <p>Chào bạn đến với QAirline. Bạn hãy giới thiệu về mình để cùng trò chuyện với QAmy. Chúc bạn ngày tốt lành, thật nhiều niềm vui bạn nhé.</p>
+          </div>
+        </div>
+        <div class="chatbox-body">
+          <div class="messages">
+            <p>Xin chào! Tôi là AMI, bạn cần tôi giúp gì hôm nay?</p>
+          </div>
+          <input type="text" placeholder="Nhập câu hỏi..." id="chatInput" />
+          <button id="sendMessage" class="send-btn">Gửi</button>
+        </div>
+    </div>
+</div>
+
+<!-- Phần Footer -->
+<footer>
+    <div class="footer-column">
+      <h3>Kết nối với QAirline</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-instagram" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-youtube" style="color: #09096a;"></i></a>
+        <a href="#"><i class="fab fa-twitter" style="color: #09096a;"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+        <h3> Hướng dẫn đặt chuyến bay</h3>
+        <p style="font-style: italic;">Tải ứng dụng di động QAirline</p>
+        <div class="app-icons">
+          <a href="#"><img src="/img/logoAppstoro.png" alt="App Store"></a>
+          <a href="#"><img src="/img/logo_googlePlay.png" alt="Google Play"></a>
+        </div>
+    </div>
+    <div class="footer-column">
+        <h3>Hướng dẫn thanh toán nhanh</h3>
+        <img src="/img/logo_footer.png" alt="Payment Icon" class="payment-icon" style="height: 100px;width: 150px;">
+    </div>
+    <div class="footer-column">
+      <h3>CÔNG TY CỔ PHẦN HÀNG KHÔNG QAIRLINE</h3>
+      <p>144 Xuân Thủy, Quận Cầu Giấy, TP Hà Nội, Việt Nam.</p>
+      <p>Chịu trách nhiệm nội dung: Thành viên nhóm QAirline</p>
+    </div>
+</footer>
+</body>
+</html>
