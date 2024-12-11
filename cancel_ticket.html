@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hủy Vé Máy Bay</title>
+    <link rel="stylesheet" href="/css/cancel_ticket.css">
+</head>
+<body>
+
+<!-- Header với hình ảnh background và tiêu đề, "Quay về trang chủ" ở góc phải -->
+<header class="header">
+    <div class="header-content">
+        <h1>Trang Hủy Vé Máy Bay</h1>
+    </div>
+    <a href="index.html" class="back-home">Quay về trang chủ</a> <!-- Liên kết về trang chủ -->
+</header>
+
+<!-- Phần thân với hình ảnh background có hiệu ứng gợn sóng -->
+<section class="cancel-section">
+    <div class="cancel-content">
+        <div class="cancel-form">
+            <img src="/img/logo_tachnen.png" alt="Logo Thương Hiệu" class="logo"> <!-- Logo thương hiệu -->
+            <h2>Hủy Vé Máy Bay</h2>
+
+            <input type="email" id="email" placeholder="Nhập email của bạn">
+            <input type="text" id="booking-code" placeholder="Nhập mã đặt vé">
+            <button onclick="searchBooking()">Tìm vé</button>
+        </div>
+
+                <!-- Phần hiển thị kết quả sau khi bấm nút -->
+                <div class="result-card" id="result-card" style="display: none;">
+                    <h3>Thông Tin Vé Của Bạn</h3>
+                    <p><strong>Mã đặt vé:</strong> <span id="result-code">VN123456</span></p>
+                    <p><strong>Hành khách:</strong> <span id="result-passenger">Nguyễn Văn A</span></p>
+                    <p><strong>Ngày bay:</strong> <span id="result-date">15/12/2024</span></p>
+                    <p><strong>Giá vé:</strong> <span id="result-price">1,500,000 VND</span></p>
+                    <button onclick="cancelTicket()">Hủy Vé</button>
+                </div>
+    </div>
+</section>
+
+
+<!-- Nút chat -->
+<div class="chat-widget">
+    <button id="chatBtn" class="chat-btn">
+        <img src="/img/chat_icon.png" alt="Chat Icon" class="chat-icon"> Chat với QAMI
+    </button>
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+          <img src="/img/logo_tachnen.png" alt="Logo" class="chatbox-logo">
+          <div class="header-text">
+            <h2>QAirline Love You</h2>
+            <p>Chào bạn đến với QAirline. Bạn hãy giới thiệu về mình để cùng trò chuyện với QAmy. Chúc bạn ngày tốt lành, thật nhiều niềm vui bạn nhé.</p>
+          </div>
+        </div>
+        <div class="chatbox-body">
+          <div class="messages">
+            <p>Xin chào! Tôi là AMI, bạn cần tôi giúp gì hôm nay?</p>
+          </div>
+          <input type="text" placeholder="Nhập câu hỏi..." id="chatInput" />
+          <button id="sendMessage" class="send-btn">Gửi</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/cancel_ticket.js"></script>
+</body>
+</html>
