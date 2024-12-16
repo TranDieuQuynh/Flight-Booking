@@ -14,6 +14,10 @@ export class FlightService {
     private readonly aircraftRepository: Repository<Aircraft>,
   ) {}
 
+  async getAllFlights(): Promise<Flight[]> {
+    return await this.flightRepository.find();
+  }
+
   async createFlight(createFlightDto: CreateFlightDto): Promise<Flight> {
     const { aircraft_id, ...flightData } = createFlightDto;
 

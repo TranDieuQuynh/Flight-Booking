@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsUUID, IsDecimal, IsDateString } from 'class-validator';
+import { IsString, IsNotEmpty, IsUUID, IsDecimal, IsDateString, IsNumber, IsPositive } from 'class-validator';
 
 export class CreateFlightDto {
   @IsUUID()
@@ -18,7 +18,8 @@ export class CreateFlightDto {
   @IsDateString({}, { message: 'Arrival time must be a valid date string' })
   arrival_time: Date;
 
-  @IsDecimal()
+  @IsNumber({ allowInfinity: false, allowNaN: false }, { message: 'Base price must be a valid number' })
+  @IsPositive({ message: 'Base price must be greater than 0' })
   base_price: number;
 
   @IsString()

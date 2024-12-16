@@ -11,6 +11,10 @@ export class TicketClassService {
     private readonly ticketClassRepository: Repository<TicketClass>,
   ) {}
 
+  async getAllTicketClasses(): Promise<TicketClass[]> {
+    return await this.ticketClassRepository.find();
+  }
+
   async createTicketClass(createTicketClassDto: CreateTicketClassDto): Promise<TicketClass> {
     const newTicketClass = this.ticketClassRepository.create(createTicketClassDto);
     return await this.ticketClassRepository.save(newTicketClass);
