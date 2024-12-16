@@ -1,0 +1,128 @@
+/* Nút Chat */
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-btn {
+  background: linear-gradient(to left, #6600ff 0%, #cc00cc 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.chat-icon  {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  position: absolute;
+  left: -80px;
+  top: -10px;
+  transform: translateY(-50%);
+}
+
+/* Cửa sổ Chat */
+.chatbox {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header của chatbox */
+.chatbox-header {
+  background: linear-gradient(to right, #6600ff 0%, #cc00cc 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatbox-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header-text h2 {
+  color: #8cccff;
+  font-size: 20px;
+  font-weight: bolder;
+  margin:  0 0 20px 0;
+}
+
+.header-text p {
+  font-size: 14px;
+  color: #f0f0f0;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Phần thân của chatbox */
+.chatbox-body {
+  padding: 20px;
+  background-color: #f9f9f9;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.messages {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox-body input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.send-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #6600ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.send-btn:hover {
+  background-color: #cc00cc;
+}
+
+/* Hiệu ứng khi chatbox mở ra */
+.chatbox.show {
+  display: block;
+}

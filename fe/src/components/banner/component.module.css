@@ -1,0 +1,32 @@
+.banner {
+  position: relative;
+  height: 400px; /* Chiều cao của banner */
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* Video Background */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo video vừa khít */
+  z-index: -1; /* Video nằm dưới các nội dung khác */
+}
+
+/* Airplane Logo */
+.airplane-logo {
+  position: absolute;
+  top: -150px; /* Khoảng cách từ trên xuống */
+  left: 100px; /* Khoảng cách từ bên trái */
+  z-index: 1; /* Đảm bảo logo máy bay nằm trên video */
+}
+
+.airplane-logo img {
+  width: 600px; /* Kích thước logo máy bay */
+  height: auto;
+}

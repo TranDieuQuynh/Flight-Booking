@@ -1,0 +1,178 @@
+
+/* Footer */
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 10px 0;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700; /* Màu vàng khi hover */
+}
+
+.social-links {
+  display: flex;
+  gap: 30px;
+}
+
+.social-links li {
+  display: inline-block;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1); /* Phóng to khi hover */
+}
+
+/* Phần Logo và Slogan */
+.qairline-journey {
+  background-image: url('/img/background_purple.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.qairline-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Định dạng container chứa tiêu đề và máy bay */
+.header-container {
+  display: flex;  /* Dùng flexbox để căn chỉnh */
+  align-items: center;  /* Căn giữa theo chiều dọc */
+  justify-content: center;  /* Căn giữa theo chiều ngang */
+}
+
+/* Định dạng hình ảnh máy bay */
+.airplane-image {
+  width: 80px;  /* Kích thước máy bay */
+  margin-left: 20px;  /* Khoảng cách giữa máy bay và dòng chữ */
+}
+
+/* Phần chứa 5 cột */
+.info-columns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Các cột với border hình bông hoa */
+.column {
+  position: relative;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #003366;
+  font-size: 16px;
+  text-align: center;
+  border: 5px solid transparent;
+  border-radius: 50%;  /* Góc bo tròn tạo ra hiệu ứng bông hoa */
+  background-clip: padding-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  /* Tạo bóng đổ để cột nổi bật */
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  animation: rippleEffect 2s ease-in-out infinite;
+}
+
+.column:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  50% {
+    transform: scale(1.2); /* Phóng to nhẹ */
+    opacity: 0.7; /* Giảm độ mờ một chút */
+  }
+  100% {
+    transform: scale(1); /* Quay lại kích thước ban đầu */
+    opacity: 1; /* Độ mờ quay lại ban đầu */
+  }
+}
+
+/* Phần nội dung của cột */
+.column .stars {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Tổng kết phần nội dung */
+.qairline-summary {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #003366;
+}
+
+
+#footer {
+  background-color: #030850;
+  color: #c6bebe;
+  padding: 40px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
+}
