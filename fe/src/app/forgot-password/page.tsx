@@ -4,7 +4,7 @@ import { ForgotPasswordForm } from '@/components/forgot-password-form/component'
 import { NavBar } from '@/components/navbar/component';
 
 
-const Login: React.FC = () => {
+const ForgotPassword: React.FC = () => {
   return (
     <>
       <NavBar></NavBar>
@@ -15,4 +15,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;

@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./component.module.css";
 import 'font-awesome/css/font-awesome.min.css';
 
+
 function Login() {
   return (
     <form>

@@ -16,8 +16,8 @@ export function NavBar() {
           <li><Link href="/home">TRANG CHỦ</Link></li>
           <li><Link href="/booking">ĐẶT VÉ</Link></li>
           <li><Link href="/services">DỊCH VỤ</Link></li>
-          <li><Link href="/contact">THÔNG TIN HÀNH TRÌNH</Link></li>
-          <li><Link href="/about">LIÊN HỆ</Link></li>
+          <li><Link href="/flight-search">THÔNG TIN HÀNH TRÌNH</Link></li>
+          <li><Link href="/contact">LIÊN HỆ</Link></li>
         </ul>
 
       <div className={styles['additional-icons']}>

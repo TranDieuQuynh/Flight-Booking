@@ -1,17 +1,19 @@
 import { ChatWidget } from '@/components/chat-widget/component';
 import { Footer } from '@/components/footer/component';
-import { LoginForm } from '@/components/login-form/component';
+import { ContactForm, NavigationImage } from '@/components/contact-form/component';
 import { NavBar } from '@/components/navbar/component';
 
-const Login: React.FC = () => {
+
+const Contact: React.FC = () => {
   return (
     <>
       <NavBar></NavBar>
-      <LoginForm></LoginForm>
+      <NavigationImage></NavigationImage>
+      <ContactForm></ContactForm>
       <ChatWidget></ChatWidget>
       <Footer></Footer>
     </>
   );
 };
 
-export default Login;
+export default Contact;
