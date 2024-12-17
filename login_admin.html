@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập Quản Trị Viên</title>
+    <link rel="stylesheet" href="/css/login_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Container -->
+    <div class="login-container">
+        <!-- Login Form -->
+        <div class="form-card">
+            <h2>Đăng Nhập Admin</h2>
+            <form>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Mật Khẩu" required>
+                </div>
+                <button type="submit" class="login-btn">Đăng Nhập</button>
+                <div class="extra-options">
+                    <a href="#" id="forgotPasswordLink">Quên mật khẩu?</a>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Forgot Password Form -->
+        <div class="form-card hidden" id="forgotPasswordForm">
+            <h2>Quên Mật Khẩu</h2>
+            <p>Nhập email của bạn để khôi phục mật khẩu.</p>
+            <form>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <button type="submit" class="login-btn">Gửi Email Khôi Phục</button>
+                <div class="extra-options">
+                    <a href="#" id="backToLogin">Quay lại đăng nhập</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+        const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        const backToLogin = document.getElementById('backToLogin');
+        const loginForm = document.querySelector('.form-card');
+
+        // Chuyển sang form quên mật khẩu
+        forgotPasswordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.classList.add('hidden');
+            forgotPasswordForm.classList.remove('hidden');
+        });
+
+        // Quay lại form đăng nhập
+        backToLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            forgotPasswordForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

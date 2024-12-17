@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Vé</title>
+    <link rel="stylesheet" href="/css/ticketManagement_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="back-to-dashboard">
+                <a href="dashbroad_admin.html">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Quay Về Dashboard
+                    </button>
+                </a>
+            </div>
+            <h1>Quản Lý Vé</h1>
+            <button id="addTicketBtn" class="add-ticket-btn">
+                <i class="fas fa-plus-circle"></i> Thêm Vé
+            </button>
+        </header>
+
+        <!-- Search and Filter -->
+        <div class="search-filter">
+            <input type="text" placeholder="Tìm kiếm mã vé..." id="searchInput">
+            <select id="filterStatus">
+                <option value="">Lọc theo trạng thái</option>
+                <option value="Đã thanh toán">Đã thanh toán</option>
+                <option value="Chưa thanh toán">Chưa thanh toán</option>
+                <option value="Đã hủy">Đã hủy</option>
+            </select>
+            <button class="filter-btn"><i class="fas fa-filter"></i> Lọc</button>
+        </div>
+
+<!-- Tickets Table -->
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Mã Vé</th>
+                <th>Khách Hàng</th>
+                <th>Chuyến Bay</th>
+                <th>Trạng Thái</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>VE12345</td>
+                <td>Nguyễn Văn A</td>
+                <td>VN123 - Hà Nội → TP.HCM</td>
+                <td class="status paid">Đã thanh toán</td>
+                <td>
+                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                </td>
+            </tr>
+            <!-- Các dòng dữ liệu khác -->
+        </tbody>
+    </table>
+</div>
+
+
+        <!-- Tickets Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã Vé</th>
+                        <th>Khách Hàng</th>
+                        <th>Chuyến Bay</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VE12345</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>VN123 - Hà Nội → TP.HCM</td>
+                        <td class="status paid">Đã thanh toán</td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VE12346</td>
+                        <td>Trần Thị B</td>
+                        <td>VN456 - Đà Nẵng → TP.HCM</td>
+                        <td class="status unpaid">Chưa thanh toán</td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VE12346</td>
+                        <td>Trần Thị B</td>
+                        <td>VN456 - Đà Nẵng → TP.HCM</td>
+                        <td class="status unpaid">Chưa thanh toán</td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VE12345</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>VN123 - Hà Nội → TP.HCM</td>
+                        <td class="status paid">Đã thanh toán</td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VE12345</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>VN123 - Hà Nội → TP.HCM</td>
+                        <td class="status paid">Đã thanh toán</td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VE12345</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>VN123 - Hà Nội → TP.HCM</td>
+                        <td class="status paid">Đã thanh toán</td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Thêm/Chỉnh Sửa Vé</h2>
+            <form>
+                <label for="ticketCode">Mã Vé</label>
+                <input type="text" id="ticketCode" placeholder="VD: VE12345" required>
+
+                <label for="customerName">Tên Khách Hàng</label>
+                <input type="text" id="customerName" placeholder="VD: Nguyễn Văn A" required>
+
+                <label for="flightInfo">Chuyến Bay</label>
+                <input type="text" id="flightInfo" placeholder="VD: VN123 - Hà Nội → TP.HCM" required>
+
+                <label for="ticketStatus">Trạng Thái</label>
+                <select id="ticketStatus">
+                    <option value="Đã thanh toán">Đã thanh toán</option>
+                    <option value="Chưa thanh toán">Chưa thanh toán</option>
+                    <option value="Đã hủy">Đã hủy</option>
+                </select>
+
+                <button type="submit" class="save-btn">Lưu</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

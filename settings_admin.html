@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài Đặt Hệ Thống</title>
+    <link rel="stylesheet" href="/css/settings_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Cài Đặt Hệ Thống</h1>
+            <div class="back-to-dashboard">
+                <a href="dashboard_admin.html">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i> Quay Về Dashboard</button>
+                </a>
+            </div>
+        </header>
+
+        <!-- Settings Section -->
+        <div class="settings-container">
+            <!-- Thời gian giữ vé -->
+            <div class="settings-card">
+                <h2>Thời Gian Giữ Vé</h2>
+                <input type="number" id="holdTime" placeholder="Nhập số phút" min="5" max="60">
+                <label for="holdTime">Phút</label>
+                <button class="save-btn"><i class="fas fa-save"></i> Lưu</button>
+            </div>
+
+            <!-- Phí hủy vé -->
+            <div class="settings-card">
+                <h2>Phí Hủy Vé</h2>
+                <input type="number" id="cancelFee" placeholder="Nhập % phí hủy" min="0" max="100">
+                <label for="cancelFee">%</label>
+                <button class="save-btn"><i class="fas fa-save"></i> Lưu</button>
+            </div>
+
+            <!-- Tự động gửi Email -->
+            <div class="settings-card">
+                <h2>Tự Động Gửi Email Thông Báo</h2>
+                <div class="toggle-switch">
+                    <label>
+                        <input type="checkbox" id="emailNotify">
+                        <span class="slider"></span>
+                    </label>
+                    <p id="emailStatus">Chế Độ Đang Tắt</p>
+                </div>
+            </div>
+
+            <!-- Tải Logo -->
+            <div class="settings-card">
+                <h2>Thay Đổi Logo Hệ Thống</h2>
+                <input type="file" id="logoUpload" accept="image/*">
+                <button class="save-btn"><i class="fas fa-upload"></i> Tải Lên</button>
+            </div>
+
+            <!-- Giới Hạn Đặt Vé -->
+            <div class="settings-card">
+                <h2>Giới Hạn Số Vé</h2>
+                <input type="number" id="ticketLimit" placeholder="Nhập giới hạn vé" min="1" max="10">
+                <label for="ticketLimit">Vé mỗi khách hàng</label>
+                <button class="save-btn"><i class="fas fa-save"></i> Lưu</button>
+            </div>
+        </div>
+
+        <!-- Thời gian cập nhật -->
+        <div class="last-updated">
+            <p>Lần cập nhật cuối: <span id="lastUpdated">Chưa có cập nhật</span></p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const emailNotify = document.getElementById('emailNotify');
+        const emailStatus = document.getElementById('emailStatus');
+        const lastUpdated = document.getElementById('lastUpdated');
+
+        // Thay đổi trạng thái Email Thông Báo
+        emailNotify.addEventListener('change', () => {
+            if (emailNotify.checked) {
+                emailStatus.textContent = "Chế Độ Đang Bật";
+            } else {
+                emailStatus.textContent = "Chế Độ Đang Tắt";
+            }
+            updateTimestamp();
+        });
+
+        // Cập nhật thời gian cuối cùng
+        function updateTimestamp() {
+            const now = new Date();
+            lastUpdated.textContent = now.toLocaleString();
+        }
+    </script>
+</body>
+</html>

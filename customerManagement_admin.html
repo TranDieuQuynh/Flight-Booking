@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Khách Hàng</title>
+    <link rel="stylesheet" href="/css/customerManagement_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="back-to-dashboard">
+                <a href="/dashbroad_admin.html">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Quay Về Dashboard
+                    </button>
+                </a>
+            </div>
+            <h1>Quản Lý Khách Hàng</h1>
+            <button id="addCustomerBtn" class="add-customer-btn">
+                <i class="fas fa-user-plus"></i> Thêm Khách Hàng
+            </button>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khách hàng..." id="searchInput">
+            <button class="search-btn"><i class="fas fa-search"></i> Tìm Kiếm</button>
+        </div>
+
+        <!-- Customers Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Email</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Lịch Sử Đặt Vé</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>nguyenvana@example.com</td>
+                        <td>0123456789</td>
+                        <td><button class="details-btn" onclick="showDetails('Nguyễn Văn A')">Xem Chi Tiết</button>
+                        </td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="customerNameTitle">Chi Tiết Lịch Sử Đặt Vé</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã Vé</th>
+                        <th>Chuyến Bay</th>
+                        <th>Ngày Đặt</th>
+                        <th>Trạng Thái</th>
+                        <th>Giá Vé</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                    <!-- Dữ liệu sẽ được đổ vào đây -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("historyModal");
+            const modalTitle = document.getElementById("customerNameTitle");
+            const historyTableBody = document.getElementById("historyTableBody");
+    
+            // Dữ liệu mẫu lịch sử đặt vé
+            const bookingData = {
+                "Nguyễn Văn A": [
+                    { maVe: "VE12345", chuyenBay: "VN123 - Hà Nội → TP.HCM", ngayDat: "2024-06-01", trangThai: "Đã Thanh Toán", gia: "1,500,000 VNĐ" },
+                    { maVe: "VE12346", chuyenBay: "VN456 - Đà Nẵng → TP.HCM", ngayDat: "2024-06-05", trangThai: "Chưa Thanh Toán", gia: "1,200,000 VNĐ" }
+                ],
+                "Trần Thị B": [
+                    { maVe: "VE12347", chuyenBay: "VN789 - TP.HCM → Nha Trang", ngayDat: "2024-06-10", trangThai: "Đã Hủy", gia: "900,000 VNĐ" }
+                ]
+            };
+    
+            // Hiển thị modal và đổ dữ liệu vào bảng
+            window.showDetails = function(customerName) {
+                modal.style.display = "flex";
+                modalTitle.textContent = `Chi Tiết Lịch Sử Đặt Vé - ${customerName}`;
+                const bookings = bookingData[customerName] || [];
+                historyTableBody.innerHTML = bookings.map(booking => `
+                    <tr>
+                        <td>${booking.maVe}</td>
+                        <td>${booking.chuyenBay}</td>
+                        <td>${booking.ngayDat}</td>
+                        <td class="status">${booking.trangThai}</td>
+                        <td>${booking.gia}</td>
+                    </tr>
+                `).join('');
+            };
+    
+            // Đóng modal
+            window.closeModal = function() {
+                modal.style.display = "none";
+            };
+    
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

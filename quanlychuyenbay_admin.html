@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Chuyến Bay</title>
+    <link rel="stylesheet" href="/css/quanlychuyenbay_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="back-to-dashboard">
+                <a href="/dashbroad_admin.html">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Quay Về Dashboard
+                    </button>
+                </a>
+            </div>
+
+            <h1>Quản Lý Chuyến Bay</h1>
+            <div class="action-buttons">
+                <button id="addFlightBtn"><i class="fas fa-plus-circle"></i> Thêm Chuyến Bay</button>
+            </div>
+        </header>
+
+        <!-- Search and Filter -->
+        <div class="search-filter">
+            <input type="text" placeholder="Tìm kiếm số hiệu chuyến bay..." id="searchInput">
+            <select id="filterDestination">
+                <option value="">Lọc theo điểm đến</option>
+                <option value="Hà Nội">Hà Nội</option>
+                <option value="TP.HCM">TP.HCM</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+            </select>
+            <button class="filter-btn"><i class="fas fa-filter"></i> Lọc</button>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stats-card">
+                <i class="fas fa-plane-departure"></i>
+                <h3>50</h3>
+                <p>Tổng Số Chuyến Bay</p>
+            </div>
+            <div class="stats-card">
+                <i class="fas fa-plane-slash"></i>
+                <h3>5</h3>
+                <p>Chuyến Bay Bị Hủy</p>
+            </div>
+            <div class="stats-card">
+                <i class="fas fa-clock"></i>
+                <h3>10</h3>
+                <p>Chuyến Bay Sắp Khởi Hành</p>
+            </div>
+            <div class="chart-box">
+                <h3>Tỷ Lệ Chuyến Bay</h3>
+                <canvas id="miniChart"></canvas>
+            </div>            
+
+        </div>
+
+        <!-- Note Section -->
+        <div class="note">
+            <h4>Hướng Dẫn Sử Dụng:</h4>
+            <p>- Sử dụng thanh tìm kiếm để lọc chuyến bay theo số hiệu.</p>
+            <p>- Click vào biểu tượng <i class="fas fa-edit"></i> để chỉnh sửa chuyến bay.</p>
+            <p>- Chuyến bay đã hủy không thể chỉnh sửa hoặc khôi phục.</p>
+        </div>
+
+
+
+        <!-- Flights Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Số hiệu</th>
+                        <th>Điểm đi</th>
+                        <th>Điểm đến</th>
+                        <th>Ngày giờ</th>
+                        <th>Giá vé</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VN123</td>
+                        <td>Hà Nội</td>
+                        <td>TP.HCM</td>
+                        <td>2024-07-10 08:00</td>
+                        <td>1,500,000 VNĐ</td>
+                        <td>Đang hoạt động</td>
+                        <td>
+                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <!-- Thêm các hàng dữ liệu khác tại đây -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Note Section -->
+        <div class="note">
+            <h4>Lưu ý:</h4>
+            <p>- Chỉ các chuyến bay đang hoạt động mới được chỉnh sửa.</p>
+            <p>- Chuyến bay đã hủy sẽ không thể khôi phục.</p>
+        </div>
+
+        <div class="pagination">
+            <button>&laquo; Trước</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>Tiếp &raquo;</button>
+        </div>
+        
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="flightModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Thêm/Chỉnh Sửa Chuyến Bay</h2>
+            <form>
+                <label for="flightNumber">Số hiệu chuyến bay</label>
+                <input type="text" id="flightNumber" placeholder="VD: VN123" required>
+
+                <label for="departure">Điểm đi</label>
+                <input type="text" id="departure" placeholder="VD: Hà Nội" required>
+
+                <label for="destination">Điểm đến</label>
+                <input type="text" id="destination" placeholder="VD: TP.HCM" required>
+
+                <label for="dateTime">Ngày giờ</label>
+                <input type="datetime-local" id="dateTime" required>
+
+                <label for="price">Giá vé</label>
+                <input type="number" id="price" placeholder="VD: 1500000" required>
+
+                <label for="status">Trạng thái</label>
+                <select id="status">
+                    <option value="Đang hoạt động">Đang hoạt động</option>
+                    <option value="Đã hủy">Đã hủy</option>
+                </select>
+
+                <button type="submit" class="save-btn">Lưu</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Footer Note -->
+    <div class="note">
+        <h4>Ghi Chú:</h4>
+        <p>- Dữ liệu được cập nhật vào lúc 12:00 AM mỗi ngày.</p>
+        <p>- Mọi thay đổi sẽ được lưu tự động sau khi chỉnh sửa.</p>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.getElementById('addFlightBtn').onclick = function () {
+        document.getElementById('flightModal').style.display = 'flex';
+        };
+
+        document.querySelector('.close-btn').onclick = function () {
+        document.getElementById('flightModal').style.display = 'none';
+        };
+
+        const ctx = document.getElementById('miniChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Đang hoạt động', 'Đã hủy'],
+                datasets: [{
+                    data: [90, 10], // 90% hoạt động, 10% hủy
+                    backgroundColor: ['#9933ff', '#ff9999'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                     position: 'bottom'
+                    }
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
