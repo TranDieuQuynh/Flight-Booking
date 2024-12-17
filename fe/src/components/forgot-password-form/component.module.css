@@ -1,0 +1,165 @@
+/* Phần hình nền của trang đăng nhập */
+/* Phần Hình nền và Form Đăng Nhập */
+#login-section {
+  position: relative;
+  background-size: 200% 200%; /* Kích thước lớn hơn của gradient */
+  animation: radialAnimation 3s ease-in-out infinite; /* Áp dụng hiệu ứng chuyển động */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+/* Phần hiển thị máy bay */
+.airplane-animation {
+  position: absolute;
+  left: 100%; /* Máy bay bắt đầu ở bên phải */
+  transform: translateY(-50%); /* Đảm bảo máy bay nằm giữa theo chiều dọc */
+  z-index: 1;
+  animation: flyFromRight 10s linear infinite; /* Tạo hiệu ứng máy bay bay từ phải sang trái */
+}
+
+/* Cài đặt máy bay */
+.airplane-animation .airplane {
+  width: 500px;
+  height: auto;
+}
+
+/* Tạo hiệu ứng máy bay bay từ phải sang trái */
+@keyframes flyFromRight {
+  0% {
+    left: 100%; /* Máy bay bắt đầu ở bên phải */
+  }
+  100% {
+    left: -120px; /* Máy bay kết thúc ở bên trái */
+  }
+}
+
+/* Định dạng cho form */
+#login-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: url('/img/nen_form.png') no-repeat center center/cover; /* Thêm hình ảnh nền */
+}
+
+.login-container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: rgb(203 186 255 / 80%);
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 400px;
+z-index: 2;
+
+}
+
+.login-header {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.login-header h2 {
+font-size: 24px;
+color: #4a00a2
+}
+
+.input-group {
+margin-bottom: 15px;
+}
+
+.input-group input {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  align-items: center;
+  gap: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn i {
+  font-size: 20px; /* Đặt kích thước cho icon */
+  color: #f8f8f9;
+}
+
+.links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.links a {
+  color: #0066ff;
+  text-decoration: none;
+}
+
+
+/* Các nhóm input */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Hiệu ứng hover cho input */
+.input-group input:focus {
+  border-color: #004a99; /* Màu viền khi focus */
+}
+
+/* Nút đăng nhập */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #9000c9;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #003d73;
+}
+
+/* Các liên kết bên dưới */
+.links {
+  margin-top: 10px;
+}
+
+.links a {
+  display: inline-block;
+  margin: 5px 10px;
+  color: #004a99;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}

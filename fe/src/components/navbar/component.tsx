@@ -36,11 +36,11 @@ export function NavBar() {
         </div>
 
           <div className={styles["auth-links"]}>
-            <Link href="/" className="login-link">
+            <Link href="/login" className="login-link">
               Đăng nhập
             </Link> 
             | 
-            <Link href="/" className="register-link">
+            <Link href="/register" className="register-link">
               Đăng ký
             </Link>
           </div>

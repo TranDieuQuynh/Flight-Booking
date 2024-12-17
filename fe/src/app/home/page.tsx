@@ -1,3 +1,4 @@
+import { AddOnServiceList } from '@/components/add-on-services/component';
 import { Banner } from '@/components/banner/component';
 import { ChatWidget } from '@/components/chat-widget/component';
 import { Footer } from '@/components/footer/component';
@@ -10,6 +11,7 @@ const Home: React.FC = () => {
     <>
       <NavBar></NavBar>
       <Banner></Banner>
+      <AddOnServiceList></AddOnServiceList>
       <Slogan></Slogan>
       <ChatWidget></ChatWidget>
       <Footer></Footer>
