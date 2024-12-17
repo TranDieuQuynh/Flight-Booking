@@ -11,7 +11,6 @@ export interface Offer {
 }
 
 export function getAllOffersData() {
-
   const offers: Offer[] = [
     {
       id: "12345-12345-12345-12345-12345",

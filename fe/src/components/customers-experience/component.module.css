@@ -1,0 +1,55 @@
+/* Customer Experiences Section */
+.customer-experiences {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+  color: #333;
+}
+
+.customer-experiences h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #6600cc;
+}
+
+.customer-experiences p {
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #8323ba;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.customer-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.testimonial-card h3 {
+  font-size: 16px;
+  color: #6600cc;
+}
