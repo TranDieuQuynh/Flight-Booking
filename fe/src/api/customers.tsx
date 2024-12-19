@@ -2,7 +2,7 @@ import { UUID } from "crypto";
 import ApiRequest from "./requests";
 
 export interface Customer {
-  id: UUID;
+  user_id: string;
   username: string;
   email: string;
   phone_number: string;
@@ -12,7 +12,7 @@ export interface Customer {
 export function getAllCustomersData() {
   const customers: Customer[] = [
     {
-      id: "12345-12345-12345-12345-12345",
+      user_id: "12345-12345-12345-12345-12345",
       username: "Nguyễn Văn A",
       email: "nguyenvana@example.com",
       phone_number: "0123456789",

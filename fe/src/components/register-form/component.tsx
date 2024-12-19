@@ -1,29 +1,73 @@
 import Link from "next/link";
 import styles from "./component.module.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import React, { useState } from 'react';
+import { register } from "@/api/auth";
+import { redirect } from "next/navigation";
 
 function Register() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+  async function registerEvent() {
+    const req = await register(username, email, password, passwordConfirmation);
+    alert(req["message"]);
+
+    if (req["message"] === "Register successful!") {
+      redirect("/login");
+    }
+  }
+
   return (
-    <form>
+    <div>
       <div className={styles["input-group"]}>
-        <input type="username" id="username" name="username" placeholder="Tên tài khoản" required/>
+        <input 
+          type="username" 
+          placeholder="Tên tài khoản" 
+          value={username}
+          onChange={e => setUsername(e.target.value)} 
+          required
+        />
       </div>
       <div className={styles["input-group"]}>
-        <input type="email" id="email" name="email" placeholder="Email" required/>
+        <input 
+          type="email" 
+          placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)} 
+          required
+        />
       </div>
       <div className={styles["input-group"]}>
-        <input type="password" id="password" name="password" placeholder="Mật khẩu" required/>
+        <input 
+          type="password" 
+          placeholder="Mật khẩu" 
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          required
+        />
       </div>
       <div className={styles["input-group"]}>
-        <input type="confirm-password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu" required/>
+        <input 
+          type="password" 
+          placeholder="Nhập lại mật khẩu" 
+          value={passwordConfirmation}
+          onChange={e => setPasswordConfirmation(e.target.value)}
+          required
+        />
       </div>
 
-      <button className={styles["login-btn"]}>Đăng Ký</button>
+      <button 
+        className={styles["login-btn"]} 
+        onClick={e => registerEvent()}>Đăng Ký
+      </button>
 
       <div className={styles["form-group"]}>
         <p>Đã có tài khoản? <Link href="/login">Đăng nhập</Link></p>
       </div>
-    </form>
+    </div>
   )
 }
 

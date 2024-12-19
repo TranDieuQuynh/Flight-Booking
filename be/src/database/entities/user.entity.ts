@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn } from 'typeorm';
-import { Booking } from './booking.entity';
 
 @Entity()
 export class User {
@@ -15,15 +14,9 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-  @Column()
+  @Column({ nullable: true })
   phone_number: string;
 
-  @Column()
-  role: string;
-
   @CreateDateColumn()
-  created_at: Date;
-
-  @OneToMany(() => Booking, (booking) => booking.user)
-  bookings: Booking[];
+  created_date: Date;
 }

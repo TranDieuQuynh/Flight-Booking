@@ -80,3 +80,20 @@ Aircraft - Flight: Một tàu bay có thể thực hiện nhiều chuyến bay.
 Seat - Aircraft: Một tàu bay chứa nhiều ghế, mỗi ghế thuộc một hạng.
 Announcement - Admin: Chỉ quản trị viên mới có quyền tạo hoặc sửa thông báo.
 Flight - Booking: Thêm ràng buộc về thời gian hủy vé (can_cancel_until).
+
+
+
+User
+- user_id (PK) (uuid)
+- username (string)
+- password (string)
+- email (string)
+- phone_number (string)
+- created_date (date)
+
+Admin
+- user_id (PK) (uuid)
+- username (string)
+- password (string)
+- email (string)
+- created_date (date)

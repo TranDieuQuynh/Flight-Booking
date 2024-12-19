@@ -1,0 +1,82 @@
+/* Header styles */
+.qairline-header {
+  position: relative;
+  height: 300px; /* Chiều cao header */
+  overflow: hidden; /* Ẩn phần video thừa nếu có */
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+/* Video background */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: 0; 
+}
+
+/* Overlay styles */
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); 
+  z-index: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Content styles */
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 100px; 
+  height: 100px;
+  margin-bottom: 10px;
+  animation: bounce 2s infinite; 
+}
+
+.brand-title {
+  font-size: 50px; 
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); 
+}
+
+.tagline {
+  font-size: 20px;
+  font-style: italic;
+  margin: 10px 0 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* Hiệu ứng logo */
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Hiệu ứng chữ */
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

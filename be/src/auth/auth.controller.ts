@@ -14,6 +14,7 @@ export class AuthController {
   // Register
   @Post('register')
   async register(@Body() createUserDto: CreateUserDto): Promise<any> {
+    console.log(createUserDto);
     const user = await this.userService.register(createUserDto);
     return { message: 'User registered successfully', user };
   }
@@ -22,11 +23,11 @@ export class AuthController {
   @Post('login')
   @HttpCode(200)
   async login(
-    @Body('username') username: string,
+    @Body('email') email: string,
     @Body('password') password: string,
     @Res({ passthrough: true }) response: Response,
   ): Promise<any> {
-    const user = await this.authService.validateUser(username, password);
+    const user = await this.authService.validateUser(email, password);
     if (!user) {
       throw new UnauthorizedException('Invalid credentials');
     }

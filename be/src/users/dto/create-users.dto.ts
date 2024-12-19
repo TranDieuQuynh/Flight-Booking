@@ -18,8 +18,4 @@ export class CreateUserDto {
   @IsEmail({}, { message: 'Invalid email format' })
   @IsNotEmpty({ message: 'Email is required' })
   email: string;
-
-  @Matches(/0[0-9]{9,}/, { message: 'Invalid phone number' })
-  @IsNotEmpty({ message: 'Phone number is required' })
-  phone_number: string;
 }
