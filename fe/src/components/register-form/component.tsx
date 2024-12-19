@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./component.module.css";
-import 'font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Register() {
   return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./component.module.css";
-import 'font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 function Login() {
@@ -14,7 +14,7 @@ function Login() {
       </div>
 
       <button className={styles["login-btn"]}>
-      <i className="fa fa-sign-in"></i> Đăng nhập</button>
+      <i className="fas fa-sign-in-alt"></i> Đăng nhập</button>
 
       <div className={styles["links"]}>
           <Link href="/forgot-password">Quên mật khẩu?</Link>

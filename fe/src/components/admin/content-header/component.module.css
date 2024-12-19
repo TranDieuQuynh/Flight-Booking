@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #9933ff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #9933ff;
+}
+
+.user-info i {
+  margin-left: 10px;
+  font-size: 2rem;
+  color: #9933ff;
+}

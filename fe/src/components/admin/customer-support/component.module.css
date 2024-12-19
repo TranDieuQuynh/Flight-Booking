@@ -1,0 +1,115 @@
+/* Container */
+.support-container {
+  margin: 2%;
+  background: #fff;
+  border-radius: 15px;
+  width: 95%;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+  background: #9933ff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #cc33ff;
+}
+
+/* Summary Cards */
+.support-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: rgba(153, 51, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #9933ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Bộ Lọc */
+.support-filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.support-filter input, .support-filter select, .filter-btn {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter-btn {
+  background: #9933ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #cc33ff;
+}
+
+/* Table */
+.support-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.support-table th, .support-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.support-table th {
+  background: #9933ff;
+  color: #fff;
+}
+
+.status.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.status.resolved {
+  color: green;
+  font-weight: bold;
+}
+
+.resolve-btn {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.resolve-btn:hover {
+  background: #388e3c;
+}
+
+.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

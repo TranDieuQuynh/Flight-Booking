@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./component.module.css";
-import 'font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function ForgotPassword() {
   return (
@@ -10,7 +10,7 @@ function ForgotPassword() {
       </div>
 
       <button className={styles["login-btn"]}>
-      <i className="fa fa-envelope"></i> Gửi liên kết đặt lại mật khẩu</button>
+      <i className="fas fa-envelope"></i> Gửi liên kết đặt lại mật khẩu</button>
       <div className={styles["links"]}>
           <Link href="/login">Quay lại đăng nhập</Link>
       </div>

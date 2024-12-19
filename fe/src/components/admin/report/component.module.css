@@ -1,0 +1,89 @@
+.report-container {
+  margin: 2%;
+  background: #fff;
+  border-radius: 15px;
+  width: 95%;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* Thống Kê Tổng Quan */
+.report-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.summary-card {
+  background: rgba(153, 51, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+  color: #9933ff;
+  font-size: 1.5rem;
+}
+
+/* Biểu Đồ và Bộ Lọc */
+.main-report {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-container {
+  flex: 1 1 60%;
+  min-height: 300px;
+  background: rgba(153, 51, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-section {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.filter-btn {
+  background: #9933ff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #cc33ff;
+}
+
+/* Xuất Báo Cáo */
+.export-section {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.export-btn {
+  background: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.export-btn:hover {
+  background: #388e3c;
+}

@@ -1,0 +1,9 @@
+/* Body */
+.container {
+  height: 100vh;
+  background: linear-gradient(to bottom, #9933ff, #ffccff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}

@@ -1,0 +1,126 @@
+/* Container */
+.customer-container {
+  margin: 2%;
+  background: #fff;
+  border-radius: 15px;
+  width: 95%;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #9933ff;
+  border-radius: 30px;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn {
+  background: linear-gradient(to right, #9933ff, #ff66cc);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search-btn:hover {
+  background: linear-gradient(to right, #cc33ff, #ff99cc);
+  transform: scale(1.05);
+}
+
+/* Table */
+.table-container .table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background: linear-gradient(to right, #9933ff, #ff66cc);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background: #f2f2f2;
+  transition: 0.3s ease;
+}
+
+/* Buttons in Table */
+.details-btn, .edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.details-btn {
+  color: #4caf50;
+}
+
+.edit-btn {
+  color: #ffaa00;
+}
+
+.delete-btn {
+  color: #ff3333;
+}
+
+.details-btn:hover, .edit-btn:hover, .delete-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.details-btn {
+  background: #9933ff;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.details-btn:hover {
+  background: #cc33ff;
+}

@@ -1,5 +1,5 @@
 import styles from "./component.module.css";
-import 'font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { getAllServices } from '@/api/services';
 
 function ServiceCard(props: any) {

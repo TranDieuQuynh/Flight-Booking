@@ -1,0 +1,8 @@
+/* Body */
+.container {
+  display: flex;
+  background: linear-gradient(to bottom, #9933ff 0%, #ffccff 100%);
+  min-height: 100vh;
+  color: #fff;
+  margin: 0;
+}
