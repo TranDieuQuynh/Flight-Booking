@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from '../database/entities/user.entity';
+import { User } from '../../database/entities/user.entity';
 import { CreateUserDto } from './dto/create-users.dto';
 import * as bcrypt from 'bcryptjs';
 
 @Injectable()
-export class UserService {
+export class AdminUserService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,

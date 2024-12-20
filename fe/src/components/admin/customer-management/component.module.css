@@ -58,6 +58,7 @@
   padding: 10px;
   border: 1px solid #ddd;
   text-align: center;
+  color: #333;
 }
 
 .table tr:nth-child(even) {

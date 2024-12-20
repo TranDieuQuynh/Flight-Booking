@@ -1,0 +1,75 @@
+.user-dashboard {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: url('/img/background_user.png') no-repeat center center; 
+  background-size: cover; 
+  border-radius: 15px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  color: white;
+  position: relative;
+  z-index: 1; 
+}
+
+.user-dashboard::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 0; 
+  border-radius: 15px; 
+}
+
+.user-dashboard > * {
+  position: relative;
+  z-index: 1; 
+}
+
+.avatar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tab:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tab.active {
+  background: white;
+  color: #6600cc;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

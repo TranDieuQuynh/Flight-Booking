@@ -50,7 +50,7 @@ export function CustomerManagement(props: any) {
           <tbody>
             {
               customers.map((customer, key) => (
-                <Customer customer={customer} index={key}></Customer>
+                <Customer customer={customer} index={key + 1} key={key}></Customer>
               ))
             }
           </tbody>
