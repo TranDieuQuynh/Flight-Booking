@@ -14,7 +14,6 @@ export class AuthController {
   // Register
   @Post('register')
   async register(@Body() createUserDto: CreateUserDto): Promise<any> {
-    console.log(createUserDto);
     const user = await this.userService.register(createUserDto);
     return { message: 'User registered successfully', user };
   }

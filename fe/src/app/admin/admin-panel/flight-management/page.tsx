@@ -1,3 +1,5 @@
+'use client'
+
 import { FlightManagement } from "@/components/admin/flight-management/component";
 
 const AdminFlightManagement: React.FC = () => {

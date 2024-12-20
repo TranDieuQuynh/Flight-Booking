@@ -1,0 +1,14 @@
+import { Module } from '@nestjs/common';
+import { AirportService } from './airport.service';
+import { AirportController } from './airport.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Airport } from 'src/database/entities/airport.entity';
+
+@Module({
+  imports: [TypeOrmModule.forFeature([Airport])], 
+  providers: [AirportService],
+  controllers: [AirportController],
+  exports: [AirportService]
+})
+
+export class AirportModule {}

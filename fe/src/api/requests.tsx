@@ -15,13 +15,20 @@ export default async function apiRequest(
 
   try {
     console.log(body);
-    const response = await fetch(`${API_BASE_URL}/${subroute}/${endpoint}`, {
-      method: method,
-      headers: headers,
-      body: JSON.stringify(body)
-    });
+    let response;
+    if (method === 'POST' || method === 'PUT') {
+      response = await fetch(`${API_BASE_URL}/${subroute}/${endpoint}`, {
+        method: method,
+        headers: headers,
+        body: JSON.stringify(body)
+      });
+    } else {
+      response = await fetch(`${API_BASE_URL}/${subroute}/${endpoint}`, {
+        method: method,
+        headers: headers
+      });
+    }
 
-    console.log(response.body);
     return response;
   } catch (error) {
     console.error(`

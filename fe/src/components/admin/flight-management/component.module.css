@@ -44,6 +44,8 @@
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .action-buttons button:hover {
@@ -140,13 +142,20 @@
   color: #9933ff;
 }
 
-.modal-content form label {
+.modal-content .form label {
   display: block;
   margin: 10px 0 5px;
 }
 
-.modal-content form input, .modal-content form select {
+.modal-content .form select {
   width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content .form input {
+  width: 95%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;

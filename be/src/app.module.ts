@@ -4,6 +4,9 @@ import { UserModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { AdminUserModule } from './admin/users/users.module'; 
 import { AdminAuthModule } from './admin/auth/auth.module';
+import { AircraftModule } from './aircraft/aircraft.module';
+import { AirportModule } from './airport/airport.module';
+import { FlightModule } from './flight/flight.module';
 
 @Module({
   imports: [
@@ -11,7 +14,11 @@ import { AdminAuthModule } from './admin/auth/auth.module';
     UserModule, 
     AuthModule, 
     AdminUserModule, 
-    AdminAuthModule
+    AdminAuthModule,
+    AircraftModule,
+    AirportModule,
+    FlightModule,
   ]
 })
+
 export class AppModule {}
