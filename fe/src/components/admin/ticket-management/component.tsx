@@ -1,10 +1,12 @@
 import styles from "./component.module.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { PanelContentHeader } from '@/components/admin/content-header/component';
-import { getAllTicketsData } from '@/api/tickets';
+import { getAllTicketsData, Ticket } from '@/api/tickets';
+import { useEffect, useState } from "react";
 
 function TicketData(props: any) {
   const ticket = props.ticket;
+  console.log(ticket);
   let status = "";
   switch (ticket["status"]) {
     case "paid": {status = "Đã thanh toán"; break;}
@@ -14,9 +16,9 @@ function TicketData(props: any) {
 
   return (
     <tr>
-      <td>{ticket.id.slice(0, 5)}</td>
-      <td>{ticket.username}</td>
-      <td>{ticket.flight_code.slice(0, 5)} - {ticket.departure_city} → {ticket.arrival_city}</td>
+      <td>{ticket.ticket_id.slice(0, 5)}</td>
+      <td>{ticket.customer_name}</td>
+      <td>{ticket.flight.flight_id.slice(0, 5)} - {ticket.flight.src_airport} → {ticket.flight.dest_airport}</td>
       <td className={`${styles["status"]} ${styles[ticket.status]}`}>{status}</td>
       <td>
         <button className={styles["edit-btn"]}><i className="fas fa-edit"></i></button>
@@ -27,7 +29,23 @@ function TicketData(props: any) {
 }
 
 export function TicketManagement(props: any) {
-  const tickets = getAllTicketsData();
+  const [tickets, setTickets] = useState<Ticket[]>([]);
+
+  async function fetchData() {
+    try {
+      const response = await getAllTicketsData();
+      console.log(response);
+      setTickets(response.tickets || []);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(tickets);
 
   return (
     <div className={styles["ticket-container"]}>
@@ -56,7 +74,7 @@ export function TicketManagement(props: any) {
           </thead>
           <tbody>
             {
-              tickets.map((ticket, key) => (
+              tickets?.map((ticket, key) => (
                 <TicketData ticket={ticket} key={key}></TicketData>
               ))
             }

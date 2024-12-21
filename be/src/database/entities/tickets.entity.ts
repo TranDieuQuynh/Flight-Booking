@@ -15,12 +15,12 @@ export class Ticket {
   @Column()
   customer_name: string;
 
-  @Column()
+  @Column({nullable: true})
   total_price: number;
 
   @Column()
   status: string;
 
   @Column()
-  start_time: Date;
+  booking_time: Date;
 }

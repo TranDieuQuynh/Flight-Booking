@@ -37,4 +37,30 @@ export class FlightService {
     // Save the updated entity
     return await this.flightRepository.save(flight);
   }
+
+  async searchFlights(filters: {
+    srcAirport?: string;
+    destAirport?: string;
+    startTime?: string;
+  }): Promise<Flight[]> {
+    const query = this.flightRepository.createQueryBuilder('flight');
+
+    if (filters.srcAirport) {
+      query.orWhere('flight.src_airport = :srcAirport', {
+        srcAirport: filters.srcAirport,
+      });
+    }
+    if (filters.destAirport) {
+      query.orWhere('flight.dest_airport = :destAirport', {
+        destAirport: filters.destAirport,
+      });
+    }
+    if (filters.startTime) {
+      query.orWhere('DATE(flight.start_time) = DATE(:startTime)', {
+        startTime: filters.startTime,
+      });
+    }
+
+    return query.getMany();
+  }
 }

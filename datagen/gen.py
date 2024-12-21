@@ -36,7 +36,7 @@ for e in airport:
     data = params
   )
   print(r.text)
-"""
+
 for e in aircraft:
   params = {"aircraft_name": e, "capacity": randint(30, 100)}
   print(params)
@@ -45,3 +45,11 @@ for e in aircraft:
     json = params
   )
   print(r.text)
+"""
+
+params = {
+  "start_time": "2024-12-24"
+}
+r = requests.get("http://localhost:3000/flight/search", params=params)
+print(r.url)
+print(r.text)

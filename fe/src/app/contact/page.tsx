@@ -1,3 +1,5 @@
+'use client'
+
 import { ChatWidget } from '@/components/chat-widget/component';
 import { Footer } from '@/components/footer/component';
 import { ContactForm, NavigationImage } from '@/components/contact-form/component';

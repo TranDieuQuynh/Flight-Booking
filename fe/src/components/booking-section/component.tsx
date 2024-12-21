@@ -1,6 +1,15 @@
+import { getFlight, setBooking } from "@/api/booking";
 import styles from "./component.module.css";
+import { redirect } from "next/navigation";
+import { getBooking } from "@/api/booking";
+import { Ticket } from "@/api/tickets";
+import Cookies from "js-cookie";
+import { getCurrentUser } from "@/api/auth";
+import { useEffect, useState } from "react";
 
 function BookingInfo(props: any) {
+  const flight = getFlight();
+
   return (
     <div className={styles["booking-info"]}>
       <h2>Thông tin đặt vé</h2>
@@ -8,29 +17,38 @@ function BookingInfo(props: any) {
       <div>
         <div className={styles["form-group"]}>
           <label className={styles["label"]}>Điểm khởi hành:</label>
-          <select className={styles["select"]}>
-            <option value="all">Tất cả</option>
-            <option value="qairlineXS">QAirline XS</option>
-            <option value="qairlineS">QAirline S</option>
-            <option value="qairlineL">QAirline L</option>
+          <select className={styles["select"]} disabled={true}>
+            <option value="all">{flight?.src_airport}</option>
           </select>
         </div>
         <div className={styles["form-group"]}>
           <label className={styles["label"]}>Điểm đến:</label>
-          <select className={styles["select"]}>
-            <option value="all">Tất cả</option>
-            <option value="qairlineXS">QAirline XS</option>
-            <option value="qairlineS">QAirline S</option>
-            <option value="qairlineL">QAirline L</option>
+          <select className={styles["select"]} disabled={true}>
+            <option value="all">{flight?.dest_airport}</option>
           </select>
         </div>
         <div className={styles["form-group"]}>
           <label className={styles["label"]}>Ngày đi:</label>
-          <input type="date" className={styles["input-date"]} required/>
+          <input 
+            type="date" 
+            disabled={true}
+            className={styles["input-date"]} 
+            value={flight?.start_time.split("T")[0]}
+            required/>
+        </div>
+        <div className={styles["form-group"]}>
+          <label className={styles["label"]}>Ngày đi:</label>
+          <input 
+            type="text" 
+            className={styles["input-date"]} 
+            value={props.username}
+            onChange={(e) => props.setUsername(e.target.value)}
+            required/>
         </div>
         <button 
           type="submit" 
-          className={`${styles["btn"]} ${styles["submit-button"]}`}>
+          className={`${styles["btn"]} ${styles["submit-button"]}`}
+          onClick={(e) => redirect("/flight-search")}>
             Tìm chuyến bay</button>
       </div>
     </div>
@@ -115,10 +133,44 @@ function AddOn(props: any) {
 }
 
 export function BookingSection() {
+  const [username, setUsername] = useState("");
+  async function getUsername() {
+    const user = (await getCurrentUser()).user;
+    if (user) {
+      setUsername(user.username);
+    }
+    
+  }
+
+  useEffect(() => {
+    getUsername();
+  }, []);
+
+  function book() {
+    const flight = getFlight();
+    if (!flight) {
+      return;
+    }
+
+    const booking = getBooking();
+    booking.push({
+      ticket_id: "",
+      flight: flight,
+      customer_id: Cookies.get("UUID"),
+      customer_name: username,
+      total_price: 1,
+      status: "unpaid",
+    } as Ticket);
+
+    setBooking(booking);
+
+    redirect("/shopping-cart");
+  }
+
   return (
     <section id="booking-section" style={{color: "#170290"}}>
       <div className={styles["booking-container"]}>
-        <BookingInfo></BookingInfo>
+        <BookingInfo username={username} setUsername={setUsername}></BookingInfo>
         <ExtraServices></ExtraServices>
         <Experiences></Experiences>
         <AddOn></AddOn>
@@ -126,6 +178,7 @@ export function BookingSection() {
       <div className={styles["booking-btn-container"]}>
         <button 
           className={styles["booking-btn"]}
+          onClick={(e) => book()}
         >Đặt vé</button>
       </div>
     </section>

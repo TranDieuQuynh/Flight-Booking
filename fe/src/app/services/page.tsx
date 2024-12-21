@@ -1,3 +1,5 @@
+'use client'
+
 import { ChatWidget } from '@/components/chat-widget/component';
 import { CustomerExperiences } from '@/components/customers-experience/component';
 import { Footer } from '@/components/footer/component';

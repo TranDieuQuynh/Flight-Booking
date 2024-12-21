@@ -1,3 +1,5 @@
+'use client'
+
 import { CurrentTicketsSection } from '@/components/current-tickets/component';
 
 const CurrentTickets: React.FC = () => {

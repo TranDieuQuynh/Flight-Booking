@@ -1,6 +1,7 @@
 import styles from "./component.module.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { PanelContentHeader } from '@/components/admin/content-header/component';
+import RevenueChart from "./revenue";
 
 export function Report(props: any) {
   return (
@@ -23,7 +24,7 @@ export function Report(props: any) {
 
       <div className={styles["main-report"]}>
         <div className={styles["chart-container"]}>
-          <canvas id="revenueChart"></canvas>
+          <RevenueChart></RevenueChart>
         </div>
         <div className={styles["filter-section"]}>
             <label>Lọc Theo Thời Gian:</label>

@@ -12,17 +12,24 @@ export function CurrentTicketsSection() {
             <th>Mã vé</th>
             <th>Hành trình</th>
             <th>Ngày</th>
-            <th>Giờ</th>
+            <th>Khách hàng</th>
             <th>Trạng thái</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>AB123</td>
-            <td>Hà Nội - TP. HCM</td>
-            <td>12/12/2024</td>
-            <td>10:00</td>
-            <td>Đã đặt</td>
+            <td>7cc38</td>
+            <td>Đà Lạt (DLI) → Đà Nẵng (DAD)</td>
+            <td>2024-12-24</td>
+            <td>aaa</td>
+            <td>Chưa thanh toán</td>
+          </tr>
+          <tr>
+            <td>a65b1</td>
+            <td>Đà Lạt (DLI) → Đà Nẵng (DAD)</td>
+            <td>2024-12-24</td>
+            <td>aaa</td>
+            <td>Chưa thanh toán</td>
           </tr>
         </tbody>
       </table>

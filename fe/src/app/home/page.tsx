@@ -1,3 +1,5 @@
+'use client'
+
 import { AddOnServiceList } from '@/components/add-on-services/component';
 import { Banner } from '@/components/banner/component';
 import { ChatWidget } from '@/components/chat-widget/component';

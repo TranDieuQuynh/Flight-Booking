@@ -1,3 +1,5 @@
+'use client'
+
 import { PersonalInfoSection } from '@/components/personal-info/component';
 
 const PersonalInfo: React.FC = () => {

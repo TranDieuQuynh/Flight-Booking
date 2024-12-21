@@ -1,3 +1,5 @@
+'use client'
+
 import { CustomerSupport } from '@/components/admin/customer-support/component';
 
 const AdminCustomerSupportManagement: React.FC = () => {

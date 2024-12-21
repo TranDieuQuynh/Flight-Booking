@@ -7,6 +7,7 @@ import {
   Param,
   NotFoundException,
   ParseUUIDPipe,
+  Query
 } from '@nestjs/common';
 import { FlightService } from './flight.service';
 import { CreateFlightDto } from './dto/create-flight.dto';
@@ -36,5 +37,22 @@ export class FlightController {
       throw new NotFoundException(`Flight with ID ${id} not found`);
     }
     return await this.flightService.updateFlight(id, updateFlightDto);
+  }
+
+  @Get('search')
+  async searchFlights(
+    @Query('src_airport') srcAirport?: string,
+    @Query('dest_airport') destAirport?: string,
+    @Query('start_time') startTime?: string,
+  ) {
+    const results = await this.flightService.searchFlights({
+      srcAirport,
+      destAirport,
+      startTime,
+    });
+    if (!results.length) {
+      throw new NotFoundException('No flights match the search criteria');
+    }
+    return results;
   }
 }

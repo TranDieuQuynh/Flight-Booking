@@ -1,3 +1,5 @@
+'use client'
+
 import { TicketHistorySection } from '@/components/ticket-history/component';
 
 const TicketHistory: React.FC = () => {

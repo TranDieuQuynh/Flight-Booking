@@ -7,7 +7,7 @@ export function Footer() {
     <footer id={styles['footer']}>
       <div className={styles["footer-container"]}>
         <div className={`${styles["footer-section"]} ${styles["logo-section"]}`}>
-          <img src="img/star.png" alt="QAirline Logo" className={styles["footer-logo"]}/>
+          <img src="http://localhost:8080/img/star.png" alt="QAirline Logo" className={styles["footer-logo"]}/>
           <p>QAirline - Chặng bay hàng đầu</p>
         </div>
     

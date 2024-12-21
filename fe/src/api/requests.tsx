@@ -22,8 +22,9 @@ export default async function apiRequest(
         headers: headers,
         body: JSON.stringify(body)
       });
-    } else {
-      response = await fetch(`${API_BASE_URL}/${subroute}/${endpoint}`, {
+    } else if (method === 'GET') {
+      response = await fetch(`${API_BASE_URL}/${subroute}/${endpoint}?` 
+        + new URLSearchParams(body).toString(), {
         method: method,
         headers: headers
       });

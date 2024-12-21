@@ -6,8 +6,9 @@ import { Aircraft, getAllAircrafts } from "@/api/aircrafts";
 import { Flight, getAllFlights } from '@/api/flights';
 import { useEffect, useState } from "react";
 import { addFlights, updateFlights } from "@/api/flights";
-
+import DoughnutChart from "./doughnut";
 import React, { useReducer } from "react";
+
 
 interface FlightState {
   flightId: string;
@@ -107,7 +108,7 @@ function StatsContainer(props: any) {
       </div>
       <div className={styles["chart-box"]}>
         <h3>Tỷ Lệ Chuyến Bay</h3>
-        <canvas id="miniChart"></canvas>
+        <DoughnutChart></DoughnutChart>
       </div>
     </div>
   )
@@ -180,6 +181,7 @@ function FlightModal(props: any) {
       console.error('Error saving data:', error);
     }
   }
+
 
   return (
     <div id="flightModal" className={styles["modal"]}>
@@ -289,6 +291,8 @@ export function FlightManagement(props: any) {
   useEffect(() => {
     fetchData();
   }, []);
+
+
 
   return (
     <div className={styles["flight-container"]}>

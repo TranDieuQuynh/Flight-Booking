@@ -1,3 +1,5 @@
+'use client'
+
 import { ChatWidget } from '@/components/chat-widget/component';
 import { Footer } from '@/components/footer/component';
 import { NavBar } from '@/components/navbar/component';

@@ -66,3 +66,39 @@ export async function updateFlights(
     }
   ); 
 }
+
+export async function searchFlights(
+  src_airport: string | undefined, 
+  dest_airport: string | undefined, 
+  start_time: string | undefined) {
+
+  console.log(src_airport);
+  console.log(dest_airport);
+  console.log(start_time);
+  const params = {
+    src_airport: src_airport,
+    dest_airport: dest_airport,
+    start_time: start_time
+  };
+
+  if (!src_airport) {
+    delete params.src_airport;
+  }
+  if (!dest_airport) {
+    delete params.dest_airport;
+  }
+  if (!start_time) {
+    delete params.start_time;
+  } 
+  if (start_time) {
+    params.start_time = start_time.split("T")[0];
+  }
+
+  const response = await apiRequest("GET", "flight", "search", params);
+  if (response?.status == 200) {
+    const flights: Flight[] = await response.json();
+    return {message: "Successfully retrieved!", flights: flights};
+  }
+
+  return {message: "Failed to fetch flights data!", flights: ([] as any) as Flight[]};
+}

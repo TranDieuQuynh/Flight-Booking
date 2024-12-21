@@ -1,10 +1,24 @@
-import { UUID } from "crypto";
 import apiRequest from "./requests";
 import { Customer } from "./customers";
-import { plainToInstance } from 'class-transformer';
+import Cookies from "js-cookie";
 
-export function getCurrentUsername() {
-  return "A";
+export async function getCurrentUser() {
+  const uuid = Cookies.get("UUID");
+  if (uuid) {
+    const response = await apiRequest(
+      "GET", 
+      "users",
+      uuid,
+      ""
+    );
+
+    if (response?.status === 200) {
+      const data = await response.json();
+      return {message: "Signed in!", user: data as Customer};
+    }
+
+  }
+  return {message: "Not signed in!"};
 }
 
 export function getCurrentAdminUsername() {

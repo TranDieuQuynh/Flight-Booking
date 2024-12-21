@@ -7,6 +7,7 @@ import { AdminAuthModule } from './admin/auth/auth.module';
 import { AircraftModule } from './aircraft/aircraft.module';
 import { AirportModule } from './airport/airport.module';
 import { FlightModule } from './flight/flight.module';
+import { TicketModule } from './ticket/ticket.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { FlightModule } from './flight/flight.module';
     AircraftModule,
     AirportModule,
     FlightModule,
+    TicketModule
   ]
 })
 
